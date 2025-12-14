@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>축구 클래스 선택</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #F9D976, #F39F86, #B17DC5);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+      color: #333;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+
+    .teacher-button {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      background-color: white;
+      padding: 14px 16px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 14px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-align: left;
+    }
+
+    .teacher-button:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    .teacher-button img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .teacher-name {
+      font-size: 17px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    footer {
+      font-size: 14px;
+      color: #555;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>축구 클래스 선택</h1>
+
+    <button class="teacher-button" onclick="goTo('lee')">
+      <img src="myoung.png" alt="명선호">
+      <span class="teacher-name">명선호</span>
+    </button>
+
+    <button class="teacher-button" onclick="goTo('kim')">
+      <img src="choi.png" alt="최용범">
+      <span class="teacher-name">유아교육 전문! 최용범</span>
+    </button>
+
+    <footer>즐겁게 달리고 함께 뛰는 Soccer: We are the Champion!</footer>
+  </div>
+
+  <script>
+    function goTo(code) {
+      window.location.href = `https://example.com/teacher-${code}`;
+    }
+  </script>
+
+</body>
+</html>
+

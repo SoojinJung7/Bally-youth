@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>발리 유소년 겨울방학 특강</title>
+
+  <!-- Font Awesome CDN for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #F9D976, #F39F86, #B17DC5);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+      color: #333;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .link-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      background-color: white;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .link-button:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      color: #333;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .social-icons a:hover {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="bally-youth.png" alt="Profile" class="profile-img" />
+    <h1>⛄발리 유소년 겨울방학 특강⛄</h1>
+    <div class="subtitle">성장기 유소년을 위한 맞춤 체육 프로그램</div>
+
+    <button class="link-button" onclick="location.href='basketball.html'">농구</button>
+    <button class="link-button" onclick="location.href='soccer.html'">축구</button>
+    <button class="link-button" onclick="goTo('C')">배드민턴</button>
+    <button class="link-button" onclick="goTo('D')">인라인</button>
+    <button class="link-button" onclick="goTo('E')">생활체육</button>
+    <button class="link-button" onclick="goTo('F')">필라테스</button>
+
+
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-spotify"></i></a>
+    </div>
+    <div style="margin-top: 5px; font-size: 12px; color: #832929;">
+      성장기 운동, 발리유소년과 함께하자!
+  </div>
+
+  <script>
+    function goTo(letter) {
+      window.location.href = `https://example.com/${letter}`;
+    }
+  </script>
+
+</body>
+</html>
+
