@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>농구 클래스 선택</title>
+  <title>농구 페이지</title>
 
   <style>
     body {
@@ -32,7 +32,6 @@
       margin-bottom: 26px;
     }
 
-    /* ✅ 카드 그리드 (기본: 모바일 1열) */
     .card-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -40,14 +39,12 @@
       margin-bottom: 28px;
     }
 
-    /* ✅ 태블릿·데스크톱: 2열 */
     @media (min-width: 768px) {
       .card-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* ✅ 카드 */
     .teacher-card {
       background: white;
       border-radius: 18px;
@@ -62,7 +59,6 @@
       box-shadow: 0 10px 22px rgba(0,0,0,0.15);
     }
 
-    /* ✅ 사진 묶음 */
     .teacher-images {
       display: flex;
       justify-content: center;
@@ -75,14 +71,8 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #fff;
-      margin-left: -10px;
     }
 
-    .teacher-images img:first-child {
-      margin-left: 0;
-    }
-
-    /* ✅ 이름 */
     .teacher-name {
       font-size: 15px;
       font-weight: bold;
@@ -99,37 +89,30 @@
 <body>
 
   <div class="container">
-    <h1>농구 클래스 선택</h1>
+    <h1>필립과 함께하는 발리유소년 농구!</h1>
 
     <div class="card-grid">
 
-      <!-- 카드 1 -->
-      <div class="teacher-card" onclick="goTo('lee')">
+      <!-- ✅ 농구강사 프로필 보기 -->
+      <div class="teacher-card" onclick="location.href='basketball_profile.html'">
         <div class="teacher-images">
-          <img src="lee_1.png" alt="이헌">
-          <img src="lee.png" alt="이다헌">
+          <img src="lee_1.png" alt="농구 강사">
         </div>
-        <div class="teacher-name">이헌 · 이다헌</div>
+        <div class="teacher-name">농구강사 프로필 보기</div>
       </div>
 
-      <!-- 카드 2 -->
-      <div class="teacher-card" onclick="goTo('kim')">
+      <!-- ✅ 상담하기 -->
+      <div class="teacher-card" onclick="location.href='https://pf.kakao.com/_xxxxxx'">
         <div class="teacher-images">
-          <img src="min.png" alt="김민석">
+          <img src="min.png" alt="상담">
         </div>
-        <div class="teacher-name">김민석</div>
+        <div class="teacher-name">상담하기</div>
       </div>
 
     </div>
 
     <footer>팀워크, 키성장에 도움되는 Basketball!</footer>
   </div>
-
-  <script>
-    function goTo(code) {
-      window.location.href = `https://example.com/teacher-${code}`;
-    }
-  </script>
 
 </body>
 </html>

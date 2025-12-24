@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>이헌 강사 | 발리 유소년 농구</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+      background: #0e0e12;
+      color: #111;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      height: 85vh;
+      max-height: 760px;
+      background: url("gemini_lee.png") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10,10,14,0.2) 0%,
+        rgba(10,10,14,0.85) 70%,
+        #0e0e12 100%
+      );
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 36px;
+      left: 20px;
+      right: 20px;
+      max-width: 420px;
+      margin: auto;
+      color: #fff;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0 0 6px;
+    }
+
+    .hero .role {
+      font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    /* ================= STATS ================= */
+    .stats {
+      display: flex;
+      gap: 10px;
+    }
+
+    .stat {
+      flex: 1;
+      background: rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 12px 8px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .stat span {
+      font-size: 11px;
+      opacity: 0.85;
+    }
+
+    /* ================= CONTENT ================= */
+    .content {
+      max-width: 420px;
+      margin: -24px auto 0;
+      background: #fff;
+      border-radius: 28px 28px 0 0;
+      padding: 28px 18px 32px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    /* ================= STORY ================= */
+    .story {
+      display: grid;
+      gap: 10px; /* 기본 카드 간격 */
+    }
+
+    .story-card {
+      background: #f6f7f9;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+
+    /* ===== 대표 이력 카드 ===== */
+    .toggle-card {
+      cursor: pointer;
+    }
+
+    /* 대표 이력 카드만 추가 여백 */
+    .career-card {
+      margin-bottom: 1px; /* ← 여기서 리듬 조절 */
+    }
+
+    .toggle-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .toggle-icon {
+      transition: transform 0.25s ease;
+      color: #666;
+    }
+
+    .career-preview {
+      font-weight: 400;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .career-full {
+      display: none;
+      margin-top: 10px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .toggle-card.open .career-full {
+      display: block;
+    }
+
+    .toggle-card.open .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    /* ================= 이력 리스트 ================= */
+    .career-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .career-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .career-label {
+      flex-shrink: 0;
+      min-width: 48px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #666;
+      background: #e9ebef;
+      border-radius: 6px;
+      padding: 2px 6px;
+      text-align: center;
+    }
+
+    /* ================= CLASS ================= */
+    .class-card {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    /* ================= CTA ================= */
+    .cta {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 18px;
+      background: #0e0e12;
+    }
+
+    .cta-primary {
+      width: 100%;
+      padding: 15px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, #ff8a00, #ff5f2e);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .cta-secondary {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #aaa;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    /* ================= 레슨 스케치 (리사이즈 버전) ================= */
+.sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.sketch-grid img,
+.sketch-grid video {
+  width: 100%;
+  height: 110px;              /* 🔑 핵심: 크기 줄이기 */
+  border-radius: 12px;
+  object-fit: cover;
+  background: #000;
+}
+
+/* 영상은 살짝만 강조 (너무 크지 않게) */
+.sketch-grid video {
+  grid-column: span 2;
+  height: 150px;              /* 사진보다만 조금 큼 */
+}
+
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>이헌 LEE HUN</h1>
+    <div class="role">Youth Basketball Specialist</div>
+
+    <div class="stats">
+      <div class="stat"><strong>10+</strong><span>Years</span></div>
+      <div class="stat"><strong>300+</strong><span>Students</span></div>
+      <div class="stat"><strong>4.9</strong><span>Trust</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="content">
+
+  <section class="section">
+    <div class="section-title">코치 소개</div>
+
+    <div class="story">
+
+      <!-- 대표 이력 -->
+      <div class="story-card toggle-card career-card" onclick="toggleCareer(this)">
+        <div class="toggle-header">
+          <span>코치 대표 이력</span>
+          <span class="toggle-icon">▾</span>
+        </div>
+
+        <div class="career-preview">
+          청소년 국가대표 상비군 (2009, 2012)<br/>
+          인천 전자랜드 엘리펀츠 프로 농구선수 (2016–2021)
+        </div>
+
+        <div class="career-full">
+          <ul class="career-list">
+            <li><span class="career-label">학력</span>성균관대학교 스포츠과학 전공</li>
+            <li><span class="career-label">자격</span>스포츠전문지도사</li>
+            <li><span class="career-label">수상</span>전국 중·고 농구 연맹전 MVP 외 다수</li>
+             - 제45회 춘계 전국 중·고 농구 연맹전 득점상<br/>
+             - 제45회 춘계 전국 중·고 농구 연맹전 리바운드상<br/>
+             - 제46회 춘계 전국 중·고 농구 연맹전 MVP<br/>
+             - 제41회 추계 전국 중·고 농구 연맹전 득점상<br/>
+             - 제6회 고려대학교 총장배 농구대회 리바운드상,<br/>
+            성균관대학교 체육공로상</li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <strong>WHO I TEACH</strong><br/>
+        초등 · 중등 유소년<br/>
+        입문부터 팀 훈련까지
+      </div>
+
+      <div class="story-card">
+        <strong>HOW I TEACH</strong><br/>
+        안전 · 기본기 · 성장 중심<br/>
+        결과보다 과정을 중시합니다.
+      </div>
+
+    </div>
+  </section>
+  <section class="section">
+  <div class="section-title">개설 가능한 수업</div>
+
+  <div class="class-card">
+    <span>농구기초반 · 50분</span>
+    <strong>100,000원</strong>
+  </div>
+
+  <div class="class-card">
+    <span>농구기술반 · 50분</span>
+    <strong>120,000원</strong>
+  </div>
+
+  <div class="class-card">
+    <span>농구마스터 · 40분</span>
+    <strong>140,000원</strong>
+  </div>
+
+  <div class="class-card">
+    <span>농구대표팀 · 80분</span>
+    <strong>180,000원</strong>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">레슨 스케치</div>
+
+  <div class="sketch-grid">
+    <img src="lee_play_1.jpg" alt="농구 레슨 사진 1">
+    <img src="lee_play_2.jpg" alt="농구 레슨 사진 2">
+
+    <video src="lee_christmas.mp4" controls playsinline></video>
+  </div>
+</section>
+
+
+</main>
+
+<div class="cta">
+  <button class="cta-primary">상담 문의하기</button>
+  <button class="cta-secondary" onclick="history.back()">← 다른 강사 보기</button>
+</div>
+
+<script>
+function toggleCareer(card) {
+  card.classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
