@@ -249,6 +249,170 @@
   height: 150px;              /* 사진보다만 조금 큼 */
 }
 
+/* 이미지 확대 오버레이 */
+.image-viewer{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-viewer img{
+  max-width: 92%;
+  max-height: 92%;
+  border-radius: 12px;
+}
+
+/* 사진에 클릭 가능 표시 */
+.sketch-grid img{
+  cursor: zoom-in;
+}
+
+
+.contact-section{
+  max-width: 520px;
+  margin: 0px auto 0;
+  padding: 0;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-panel{
+  display: none;
+  padding: 24px 18px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* 흰 영역 연결 마감 */
+.contact-section.open .contact-panel{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* ================= CONTACT (세로형 / 토글) ================= */
+
+.contact-section{
+  max-width: 420px;     /* content와 정확히 맞춤 */
+  margin: 0 auto;       /* 검정 여백 원인 제거 */
+  padding: 0;           /* 좌우 흔들림 제거 */
+}
+
+.contact-panel{
+  display: none;
+  width: 100%;
+  background: #fff;
+  padding: 22px 18px 24px;
+
+  /* 핵심: 위 흰 영역과 자연스럽게 붙게 */
+  border-radius: 0 0 20px 20px;  /* 위는 각지게, 아래만 둥글게 */
+  box-shadow: none;              /* 카드 뜨는 느낌 제거 */
+  box-sizing: border-box;
+}
+
+.contact-section.open .contact-panel{
+  display: block;
+}
+
+/* 흰 영역 연결 마감 */
+.contact-section.open .contact-panel{
+  margin-top: -1px; /* 1px 겹쳐서 경계선 제거 */
+}
+
+
+/* 제목 */
+.contact-title{
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+/* 서브 문구 */
+.contact-sub{
+  font-size: 13px;
+  color: #888;
+  font-weight: 300;
+  margin: 0 0 14px;
+}
+
+/* 바로 전화하기 */
+.call-btn{
+  display: block;
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 14px;
+  text-align: center;
+  border-radius: 14px;
+  background: #ffd84d;
+  color: #111;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* 세로형 폼 */
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: #ff8a00;
+}
+
+/* SEND 버튼 */
+.contact-submit{
+  margin-top: 6px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #ff8a00, #ff5f2e);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 하단 안내 */
+.contact-note{
+  font-size: 11px;
+  color: #777;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+/* 상담 문의하기 강조 버튼 */
+.cta-highlight{
+  background: #ffd84d;
+  font-size: 16px;
+  color: #3d3b3b;
+  box-shadow: 0 6px 16px rgba(255, 60, 60, 0.35);
+}
+
+/* 레슨 스케치 전용 */
+.section.sketch {
+  margin-bottom: 0;
+}
+
   </style>
 </head>
 
@@ -340,12 +504,18 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section sketch">
   <div class="section-title">레슨 스케치</div>
 
   <div class="sketch-grid">
-    <img src="lee_play_1.jpg" alt="농구 레슨 사진 1">
-    <img src="lee_play_2.jpg" alt="농구 레슨 사진 2">
+    <img src="lee_play_1.jpg"
+     alt="농구 레슨 사진 1"
+     onclick="openImage(this.src)">
+
+    <img src="lee_play_2.jpg" 
+      alt="농구 레슨 사진 2"
+     onclick="openImage(this.src)">
+
 
     <video src="lee_christmas.mp4" controls playsinline></video>
   </div>
@@ -354,16 +524,141 @@
 
 </main>
 
-<div class="cta">
-  <button class="cta-primary">상담 문의하기</button>
-  <button class="cta-secondary" onclick="history.back()">← 다른 강사 보기</button>
+</main>
+
+
 </div>
 
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-panel">
+
+    <a href="tel:031-728-7778" class="call-btn">📞 바로 전화하기</a>
+
+    <h3 class="contact-title">상담 문의</h3>
+    <p class="contact-sub">
+      수업 일정 · 대상 · 레벨 상담을 도와드립니다.
+    </p>
+
+   <!-- ✅ 여기: 구글폼 연동 form -->
+<form class="contact-form"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSd1AS73f4Tat0MU8MmpQSHth8lktdOSC4VyMwUgsPJQBRyfQA/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="showSuccess();">
+
+
+  <!-- 고정값 -->
+  <input type="hidden" name="entry.1676847878" value="이헌">
+  <input type="hidden" name="entry.1115432762" value="농구">
+
+  <!-- 사용자 입력 -->
+  <input type="text" name="entry.1564976340" placeholder="이름" required>
+  <input type="tel"  name="entry.86880590"  placeholder="연락처" required>
+  <textarea name="entry.630766365" rows="4" placeholder="문의사항" required></textarea>
+
+<button id="submit-btn" class="contact-submit" type="submit">
+  📧 보내기
+</button>
+
+
+  <p class="contact-note">
+    This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+  </p>
+</form>
+
+<p id="success-msg" style="
+  display:none;
+  margin-top:12px;
+  font-size:14px;
+  color:#ff6a00;
+  font-weight:600;
+  text-align:center;
+">
+  문의가 정상적으로 접수되었습니다!<br/>
+  빠르게 연락드릴게요 😊
+</p>
+
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  </div>
+
+<!-- CTA -->
+<div class="cta" id="cta">
+  <button class="cta-primary cta-highlight" onclick="openContact()">
+    ⭐상담 문의하기
+  </button>
+
+  <button class="cta-primary"
+    onclick="location.href='basketball_profile.html'">
+    다른 강사 보러가기
+  </button>
+
+  <button class="cta-primary"
+    onclick="location.href='main.html'">
+    메인으로 돌아가기
+  </button>
+</div>
+
+
+</section>
 <script>
-function toggleCareer(card) {
+function toggleCareer(card){
   card.classList.toggle("open");
 }
+
+function openContact(){
+  const section = document.getElementById("contact");
+  const content = document.querySelector(".content");
+
+  if(!section || !content) return;
+
+  section.classList.add("open");
+
+  /* 위 흰 영역 하단 매끄럽게 */
+  content.style.borderRadius = "28px 28px 0 0";
+
+  /* 상담 영역으로 스크롤만 이동 */
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function showSuccess(){
+  const msg = document.getElementById("success-msg");
+  const btn = document.getElementById("submit-btn");
+
+  if(msg){
+    msg.style.display = "block";
+  }
+  if(btn){
+    btn.disabled = true;
+    btn.innerText = "전송 완료 ✓";
+  }
+}
+
+function openImage(src){
+  const viewer = document.getElementById("imageViewer");
+  const img = document.getElementById("viewerImg");
+
+  img.src = src;
+  viewer.style.display = "flex";
+}
+
+function closeImage(){
+  const viewer = document.getElementById("imageViewer");
+  viewer.style.display = "none";
+}
 </script>
+
+
+<!-- 🔍 이미지 확대 뷰어 -->
+<div id="imageViewer" class="image-viewer" onclick="closeImage()">
+  <img id="viewerImg" src="" alt="확대 이미지">
+</div>
+
 
 </body>
 </html>
