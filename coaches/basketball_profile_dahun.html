@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>이다헌 LEE DAHUN | 발리 유소년 농구</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- 공통 CSS -->
+  <link rel="stylesheet" href="../css/coaches.css">
+
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero"
+  style="background:url('../images/coaches/dahun/dahun.png') center / cover no-repeat;">
+  <div class="hero-content">
+    <h1>이다헌 LEE DAHUN</h1>
+    <div class="role">Youth Basketball Specialist</div>
+
+    <div class="stats">
+      <div class="stat"><strong>10</strong><span>Years</span></div>
+      <div class="stat"><strong>+300</strong><span>Students</span></div>
+      <div class="stat"><strong>4.9</strong><span>Trust</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main class="content">
+
+<section class="section">
+  <div class="section-title">코치 소개</div>
+
+  <div class="story">
+
+    <!-- 대표 이력 -->
+    <div class="story-card toggle-card career-card" onclick="toggleCareer(this)">
+      <div class="toggle-header">
+        <span>코치 대표 이력</span>
+        <span class="toggle-icon">▾</span>
+      </div>
+
+      <div class="career-preview">
+        청소년 국가대표 상비군 (2017)<br/>
+      </div>
+
+      <div class="career-full">
+          <ul class="career-list">
+            <li><span class="career-label">학력</span><div class="career-text">
+              한양대학교<br/>  스포츠매니지먼트, 스포츠사이언스 복수전공  </div> </li>
+            <li><span class="career-label">자격</span>대한농구협회(KBA) 심판 자격증<br/> 스포츠전문지도사</li>
+            <li><span class="career-label">수상</span>전국 중·고 농구 연맹전 MVP 외 다수</li>
+             - 제 41회 협회장기 중·고 농구대회 어시스트상<br/>
+             - 제 24회 연맹회장기 중·고 농구대회 어시스트상<br/>
+             - 제 46회 추계 전국 남녀 중·고 농구연맹전 감투상<br/>
+             - 2019 한국 중·고 농구 왕중왕전 감투상<br/>
+             - 2019 한국 중·고 농구 왕중왕전 득점상<br/>
+             - 제 18전투비행단 동성한마음 농구대회 MVP(여단장상)</li>
+
+          </ul>
+        </div>
+       </div>
+
+    <div class="story-card">
+     <strong>WHO I TEACH</strong>
+      <p class="story-text">
+        초등 · 중등 유소년<br/>입문부터 팀 훈련까지
+      </p>
+    </div>
+
+
+    <div class="story-card">
+     <strong>HOW I TEACH</strong>
+      <p class="story-text">
+        안전 · 기본기 · 성장 중심<br/>
+        결과보다 과정을 중시합니다.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+</section>
+  <section class="section">
+  <div class="section-title">개설 가능한 수업</div>
+  
+  <!-- [EDIT] 수업 카드 복붙 -->
+  <div class="class-card">
+    <span>농구기초반 · 50분</span>
+    <strong>100,000원</strong>
+  </div>
+
+  <div class="class-card">
+    <span>농구기술반 · 50분</span>
+    <strong>120,000원</strong>
+  </div>
+
+  <div class="class-card">
+    <span>농구마스터 · 40분</span>
+    <strong>140,000원</strong>
+  </div>
+
+  <div class="class-card">
+    <span>농구대표팀 · 80분</span>
+    <strong>180,000원</strong>
+  </div>
+</section>
+
+<section class="section sketch">
+  <div class="section-title">레슨 스케치</div>
+
+  <div class="sketch-grid">
+    <img src="../images/coaches/dahun/dahun.png" onclick="openImage(this.src)">
+    <img src="../images/coaches/dahun/dahun_1.png" onclick="openImage(this.src)">
+    <video src="../videos/[EDIT].mp4" controls playsinline></video>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-section">
+  <div class="contact-panel">
+
+    <a href="tel:031-728-7778" class="call-btn">📞 바로 전화하기</a>
+
+    <h3 class="contact-title">상담 문의</h3>
+    <p class="contact-sub">수업 일정 · 대상 · 레벨 상담</p>
+
+    <form class="contact-form"
+      action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="showSuccess();">
+
+      <!-- [EDIT] 강사 식별 -->
+      <input type="hidden" name="entry.1676847878" value="[EDIT] 강사이름">
+      <input type="hidden" name="entry.1115432762" value="농구">
+
+      <input type="text" name="entry.NAME" placeholder="이름" required>
+      <input type="tel" name="entry.PHONE" placeholder="연락처" required>
+      <textarea name="entry.MESSAGE" rows="4" placeholder="문의사항" required></textarea>
+
+      <button id="submit-btn" class="contact-submit">📧 보내기</button>
+    </form>
+
+    <p id="success-msg" class="success-msg">문의가 접수되었습니다.</p>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  </div>
+
+  <div class="cta">
+    <button class="cta-primary cta-highlight" onclick="openContact()">⭐상담 문의하기</button>
+    <button class="cta-primary" onclick="location.href='../coaches/index.html'">다른 강사 보러가기</button>
+    <button class="cta-primary" onclick="location.href='/'">홈으로 가기</button>
+
+  </div>
+</section>  
+
+<!-- 이미지 확대 -->
+<div id="imageViewer" class="image-viewer" onclick="closeImage()">
+  <img id="viewerImg">
+</div>
+
+<!-- 공통 JS -->
+<script src="../js/coaches.js"></script>
+
+</body>
+</html>

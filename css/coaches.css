@@ -13,30 +13,36 @@ body{
   background:linear-gradient(180deg,rgba(10,10,14,.2),rgba(10,10,14,.85) 70%,#0e0e12)
 }
 .hero-content{
-  position:absolute;bottom:36px;left:20px;right:20px;
+  position:absolute;bottom:48px;left:20px;right:20px;
   max-width:420px;margin:auto;color:#fff;text-align:center;z-index:2
 }
 .hero h1{font-size:32px;font-weight:800;margin:0 0 6px}
-.role{font-size:15px;opacity:.9}
+.role{font-size:15px;opacity:.9;margin-bottom:16px;}
 
 /* STATS */
-.stats{display:flex;gap:10px}
+.stats{display:flex;gap:10px; margin-bottom:0px;}
 .stat{flex:1;background:rgba(255,255,255,.12);border-radius:14px;padding:12px 8px}
 .stat strong{display:block;font-size:18px}
 .stat span{font-size:11px;opacity:.85}
 
 /* CONTENT */
 .content{
-  max-width:420px;margin:-24px auto 0;
+  max-width:420px;margin:-32px auto 0;
   background:#fff;border-radius:28px 28px 0 0;
-  padding:28px 18px 32px
-}
+  padding:28px 18px 32px;position:relative;z-index: 3;}
 .section{margin-bottom:28px}
 .section-title{font-size:17px;font-weight:700;margin-bottom:15px}
 
 /* STORY */
-.story{display:grid;gap:10px}
-.story-card{background:#f6f7f9;border-radius:16px;padding:14px 16px;font-size:14px}
+.story{display:grid;gap:10px;}
+.story-card{background:#f6f7f9;border-radius:18px;padding:16px 18px;
+  font-family:Pretendard, Apple SD Gothic Neo, sans-serif; font-size:14px;
+  line-height:1.55;color:#222;}
+.story-card strong{display:block;font-size:13px;font-weight:700;
+  margin-bottom:4px;line-height:1.2;}
+.story-text{margin:0;font-size:14px;line-height:1.5;}
+
+
 
 /* TOGGLE */
 .toggle-card{cursor:pointer}
@@ -45,6 +51,15 @@ body{
 .toggle-card.open .toggle-icon{transform:rotate(180deg)}
 .career-full{display:none}
 .toggle-card.open .career-full{display:block}
+
+.career-list{list-style:none;padding:0;margin:8px 0 0;}
+.career-list li{display:flex;gap:8px;align-items:flex-start;font-size:14px;
+  line-height:1.55;color:#222;}
+.career-label{min-width:48px;font-size:11px;font-weight:600;color:#666;background:#e9ebef;
+  border-radius:6px;padding:2px 6px;text-align:center;margin-top:2px;}
+.career-text{font-size:14px;line-height: 1.55;}
+
+
 
 /* CLASS */
 .class-card{
