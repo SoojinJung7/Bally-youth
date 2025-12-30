@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>발리 유소년 겨울방학 특강</title>
+  <link rel="icon" href="images/favicon.ico">
+
 
   <style>
     * {
@@ -52,7 +54,7 @@
     .subtitle {
       font-size: 14px;
       color: #777;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
 
     .link-button {
@@ -88,6 +90,41 @@
     .social-icons a:hover {
       color: #555;
     }
+
+    .sub-action {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.sub-action a {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.6);
+  color: #444;
+  text-decoration: none;
+}
+
+.floating-call {
+  position: fixed;
+  right: 16px;
+  bottom: 20px;
+  z-index: 999;
+
+  background: #e63946;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
   </style>
 </head>
 <body>
@@ -96,8 +133,16 @@
     <img src="images/bally-youth.png" alt="Profile" class="profile-img" />
     <h1>⛄발리 유소년 겨울방학 특강⛄</h1>
     <div class="subtitle">성장기 유소년을 위한 맞춤 체육 프로그램</div>
+    <div class="sub-action">
+  <a href="https://blog.naver.com/PostList.naver?blogId=sportsclub__phillip&from=postList&categoryNo=10"
+     target="_blank" rel="noopener">
+    🧸발리 유소년 블로그 보러가기
+  </a>
+</div>
 
-    <button class="link-button" onclick="location.href='promotion.html'">📌스케줄/프로모션</button>
+
+
+    <button class="link-button" onclick="location.href='promotion.html'">스케줄/프로모션</button>
     <button class="link-button" onclick="location.href='../sports/basketball.html'">농구</button>
     <button class="link-button" onclick="location.href='../sports/soccer.html'">축구</button>
     <button class="link-button" onclick="location.href='../sports/pilates.html'">필라테스</button>
@@ -107,11 +152,15 @@
     
 
     <div style="margin-top: 5px; font-size: 16px; color: #832929;">
-      성장기 운동, 발리유소년과 함께하자!
+      성장기 운동, 발리유소년과 함께!
   </div>
 
   
 
+
+  <a href="tel:0317287778" class="floating-call">
+  📞 바로 상담하기
+</a>
 
 </body>
 </html>
