@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>강지순 | 발리 유소년 필라테스</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- 공통 CSS -->
+  <link rel="stylesheet" href="../css/coaches.css">
+
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero"
+  style="background:url('../images/coaches/jisun/jisunprofile.png') center / cover no-repeat;">
+  <div class="hero-content">
+    <h1>강지순 KANG JISUN</h1>
+    <div class="role">Youth Pilates Specialist</div>
+<!-- ================= HERO 하단 박스 3개 커스터마이징 가능 ================= -->
+    <div class="stats">
+      <div class="stat"><strong>10</strong><span>Years</span></div>
+      <div class="stat"><strong>+300</strong><span>Students</span></div>
+      <div class="stat"><strong>4.9</strong><span>Trust</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main class="content">
+
+<section class="section">
+  <div class="section-title">코치 소개</div>
+
+  <div class="story">
+
+    <!-- 대표 이력 -->
+    <div class="story-card toggle-card career-card" onclick="toggleCareer(this)">
+      <div class="toggle-header">
+        <span>코치 대표 이력</span>
+        <span class="toggle-icon">▾</span>
+      </div>
+
+      <div class="career-preview">
+        사단법인 대한필라테스협회(KPA) 인증강사<br/>
+        분당 차의과대학대학교 분당차병원 심장내과 연구간호사
+      </div>
+
+      <div class="career-full">
+          <ul class="career-list">
+            <li><span class="career-label">학력</span><div class="career-text">
+              한라대학교 간호학과 전공 </div> </li>
+            <li><span class="career-label">자격</span>간호사 면허증</li>
+            <li><span class="career-label">안무가</span>KBS, YMCA 합창단 안무 다수</li>
+             - YMCA 어린이 합창단 안무가 (2001~2004)<br/>
+             - KBS 어린이 합창단 안무가 (2003)<br/>
+             - 제주 도립 합창단 안무가 (2002~2004)<br/>
+             - 서귀포 시립 합창단 안무가 (2001~2004)
+</li>
+
+          </ul>
+        </div>
+       </div>
+
+    <div class="story-card">
+     <strong>WHO I TEACH</strong>
+      <p class="story-text">
+        집중력과 인지력이 필요한 초등 · 중등 유소년<br/>
+      </p>
+    </div>
+
+
+    <div class="story-card">
+     <strong>HOW I TEACH</strong>
+      <p class="story-text">
+        필라테스는 안전하게, 수업은 즐겁게!<br/>
+        나의 몸을 스스로 지켜내는 힘을 기릅니다.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+</section>
+  <section class="section">
+  <div class="section-title">개설 가능한 수업</div>
+  
+  <!-- [EDIT] 수업 카드 복붙 -->
+  <div class="class-card">
+    <span>유소년 화목 정규반(50분)</span>
+    <strong>회당 22,500원</strong>
+  </div>
+
+  <div class="class-card">
+    <span>3:1 대기구 레슨(50분)</span>
+    <strong>회당 40,000원</strong>
+  </div>
+
+
+  <div class="class-card">
+    <span>2:1 듀엣(50분)</span>
+    <strong>인당 50,000원</strong>
+  </div>
+
+    <div class="class-card">
+    <span>개인레슨(50분)</span>
+    <strong>회당 70,000원</strong>
+  </div>
+
+<section class="section sketch">
+  <div class="section-title">레슨 스케치</div>
+
+  <div class="sketch-grid">
+    <img src="../images/bally-youth.png" onclick="openImage(this.src)">
+    <img src="../images/bally-youth.png" onclick="openImage(this.src)">
+    <video src="../videos/[EDIT].mp4" controls playsinline></video>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-section">
+  <div class="contact-panel">
+
+    <a href="tel:031-728-7778" class="call-btn">📞 바로 전화하기</a>
+
+    <h3 class="contact-title">상담 문의</h3>
+    <p class="contact-sub">수업 일정 · 대상 · 레벨 상담</p>
+
+    <form class="contact-form"
+      action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="showSuccess();">
+
+      <!-- [EDIT] 강사 식별. 이후 종목, 강사별로 구분 필요 -->
+      <input type="hidden" name="entry.1676847878" value="[EDIT] 강사이름">
+      <input type="hidden" name="entry.1115432762" value="농구">
+
+      <input type="text" name="entry.NAME" placeholder="이름" required>
+      <input type="tel" name="entry.PHONE" placeholder="연락처" required>
+      <textarea name="entry.MESSAGE" rows="4" placeholder="문의사항" required></textarea>
+
+      <button id="submit-btn" class="contact-submit">📧 보내기</button>
+    </form>
+
+    <p id="success-msg" class="success-msg">  문의가 정상적으로 접수되었습니다!<br/>빠르게 연락드릴게요 😊</p>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  </div>
+
+  <div class="cta">
+    <button class="cta-primary cta-highlight" onclick="openContact()">⭐상담 문의하기</button>
+    <button class="cta-primary" onclick="location.href='../coach_list/pilates_coach_list.html'">다른 강사 보러가기</button>
+    <button class="cta-primary" onclick="location.href='/'">홈으로 가기</button>
+
+  </div>
+</section>  
+
+<!-- 이미지 확대 -->
+<div id="imageViewer" class="image-viewer" onclick="closeImage()">
+  <img id="viewerImg">
+</div>
+
+<!-- 공통 JS -->
+<script src="../js/coaches.js"></script>
+
+</body>
+</html>
