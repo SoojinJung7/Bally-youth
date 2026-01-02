@@ -127,22 +127,40 @@
     <h3 class="contact-title">상담 문의</h3>
     <p class="contact-sub">수업 일정 · 대상 · 레벨 상담</p>
 
-    <form class="contact-form"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfEsX0rh0R5R1JwbrvdMMYD6bCOm0S6HSFYur4o0IPoI4QT7Q/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="showSuccess();">
+    <form class="contact-form" id="contactForm" onsubmit="submitToMultipleForms(event)">
 
-      <!-- [EDIT] 강사 식별. 이후 종목, 강사별로 구분 필요 -->
-      <input type="hidden" name="entry.1676847878" value="[EDIT] 강사이름">
-      <input type="hidden" name="entry.1115432762" value="농구">
+      <!-- 강사 식별 -->
+      <input type="hidden" name="entry.1676847878" value="김채환">
+      <input type="hidden" name="entry.1115432762" value="필라테스">
 
-      <input type="text" name="entry.NAME" placeholder="이름" required>
-      <input type="tel" name="entry.PHONE" placeholder="연락처" required>
-      <textarea name="entry.MESSAGE" rows="4" placeholder="문의사항" required></textarea>
+      <input type="text" name="entry.1564976340" placeholder="이름" required>
+      <input type="tel" name="entry.86880590" placeholder="연락처" required>
+      <textarea name="entry.630766365" rows="4" placeholder="문의사항" required></textarea>
 
       <button id="submit-btn" class="contact-submit">📧 보내기</button>
     </form>
+
+    <script>
+    function submitToMultipleForms(event) {
+      event.preventDefault();
+
+      const form = document.getElementById('contactForm');
+      const formData = new FormData(form);
+
+      // Individual instructor form
+      const instructorFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfEsX0rh0R5R1JwbrvdMMYD6bCOm0S6HSFYur4o0IPoI4QT7Q/formResponse';
+
+      // Master form
+      const masterFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdFI0cYXaQKpgs6qh70bg9hGMmasDliTUOSX3Zs-xBKle8MsA/formResponse';
+
+      // Submit to both forms
+      fetch(instructorFormUrl, { method: 'POST', body: formData, mode: 'no-cors' });
+      fetch(masterFormUrl, { method: 'POST', body: formData, mode: 'no-cors' });
+
+      showSuccess();
+      return false;
+    }
+    </script>
 
     <p id="success-msg" class="success-msg">  문의가 정상적으로 접수되었습니다!<br/>빠르게 연락드릴게요 😊</p>
     <iframe name="hidden_iframe" style="display:none;"></iframe>

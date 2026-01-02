@@ -541,12 +541,7 @@
     </p>
 
    <!-- ✅ 여기: 구글폼 연동 form -->
-<form class="contact-form"
-  action="https://docs.google.com/forms/d/e/1FAIpQLSd1AS73f4Tat0MU8MmpQSHth8lktdOSC4VyMwUgsPJQBRyfQA/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="showSuccess();">
-
+<form class="contact-form" id="contactForm" onsubmit="submitToMultipleForms(event)">
 
   <!-- 고정값 -->
   <input type="hidden" name="entry.1676847878" value="이헌">
@@ -561,11 +556,32 @@
   📧 보내기
 </button>
 
-
   <p class="contact-note">
     This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
   </p>
 </form>
+
+<script>
+function submitToMultipleForms(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('contactForm');
+  const formData = new FormData(form);
+
+  // Individual instructor form
+  const instructorFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd1AS73f4Tat0MU8MmpQSHth8lktdOSC4VyMwUgsPJQBRyfQA/formResponse';
+
+  // Master form
+  const masterFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdFI0cYXaQKpgs6qh70bg9hGMmasDliTUOSX3Zs-xBKle8MsA/formResponse';
+
+  // Submit to both forms
+  fetch(instructorFormUrl, { method: 'POST', body: formData, mode: 'no-cors' });
+  fetch(masterFormUrl, { method: 'POST', body: formData, mode: 'no-cors' });
+
+  showSuccess();
+  return false;
+}
+</script>
 
 <p id="success-msg" style="
   display:none;
