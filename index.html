@@ -66,62 +66,34 @@
       margin-bottom: 10px;
     }
 
-    .link-button {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 15px;
-      font-size: 16px;
-      background-color: white;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
+    .action-row {
+      display: flex;
+      gap: 10px;
+      margin: 0 0 20px;
     }
 
-    .link-button:hover {
-      background-color: #f0f0f0;
+    .action-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #333;
+      text-decoration: none;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      background: #f5f5f5;
       transform: translateY(-2px);
     }
-
-    .social-icons {
-      margin-top: 25px;
-    }
-
-    .social-icons a {
-      color: #333;
-      margin: 0 10px;
-      font-size: 20px;
-      transition: color 0.2s ease-in-out;
-    }
-
-    .social-icons a:hover {
-      color: #555;
-    }
-
-    .sub-action {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-.sub-action a {
-  display: inline-block;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 14px;
-  background: rgba(227, 97, 76, 0.85);
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(227, 97, 76, 0.3);
-  transition: all 0.2s ease;
-}
-
-.sub-action a:hover {
-  background: rgba(227, 97, 76, 1);
-  transform: translateY(-1px);
-}
 
 .floating-call {
   position: fixed;
@@ -201,14 +173,11 @@
   h1 { font-size: 22px; margin-bottom: 6px; }
   .subtitle { font-size: 16px; margin-bottom: 12px; }
 
-  .link-button {
-    padding: 16px;
-    font-size: 17px;
-    margin-bottom: 14px;
-    border-radius: 14px;
+  .action-btn {
+    padding: 16px 12px;
+    font-size: 16px;
+    border-radius: 16px;
   }
-
-  .sub-action a { font-size: 15px; padding: 11px 18px; }
 
   .quick-inquiry-btn {
     padding: 18px;
@@ -228,7 +197,7 @@
   .container { max-width: 620px; padding: 44px 40px; }
   h1 { font-size: 24px; }
   .subtitle { font-size: 17px; }
-  .link-button { font-size: 18px; padding: 17px; }
+  .action-btn { font-size: 17px; padding: 17px 14px; }
   .quick-inquiry-btn { font-size: 20px; padding: 19px; }
 }
 
@@ -243,31 +212,19 @@
     <div class="subtitle">성장기 유소년을 위한 맞춤 체육 프로그램</div>
 
     <a href="promotion.html" class="promo-banner" aria-label="발리유소년 여름방학특강 모집 안내">
-      <img src="images/promotion-banner.png?v=20260604-1535" alt="발리유소년 여름방학특강" />
+      <img src="images/promotion.png?v=20260604-1456" alt="발리유소년 여름방학특강" />
     </a>
 
     <a href="quick_inquiry.html" class="quick-inquiry-btn">
       💬 빠른 상담/문의하기
     </a>
 
-    <div class="sub-action">
-  <a href="https://blog.naver.com/PostList.naver?blogId=sportsclub__phillip&from=postList&categoryNo=10"
-     target="_blank" rel="noopener noreferrer">
-    🧸발리 유소년 블로그 보러가기
-  </a>
-</div>
-
-
-
-    <button class="link-button" onclick="location.href='promotion.html'">발리유소년 스케줄</button>
-    <button class="link-button" onclick="location.href='sports/basketball.html'">농구</button>
-    <button class="link-button" onclick="location.href='sports/soccer.html'">축구/풋살</button>
-    <button class="link-button" onclick="location.href='sports/pilates.html'">필라테스</button>
-    <button class="link-button" onclick="location.href='sports/dance.html'">🎀방송댄스</button>
-    <button class="link-button" onclick="location.href='sports/badminton.html'">배드민턴</button>
-    <button class="link-button" onclick="location.href='sports/inline.html'">인라인</button>
-    <button class="link-button" onclick="location.href='sports/indoor.html'">생활체육</button>
-    
+    <div class="action-row">
+      <a href="promotion.html" class="action-btn">🏃 운동종목 보러가기</a>
+      <a href="https://blog.naver.com/PostList.naver?blogId=sportsclub__phillip&from=postList&categoryNo=10"
+         target="_blank" rel="noopener noreferrer"
+         class="action-btn">🧸 발리유소년 블로그</a>
+    </div>
 
     <div style="margin-top: 5px; font-size: 16px; color: #832929;">
       성장기 운동, 발리유소년과 함께!
