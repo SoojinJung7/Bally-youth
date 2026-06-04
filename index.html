@@ -157,6 +157,26 @@
   text-align: center;
 }
 
+.promo-banner {
+  display: block;
+  margin: 6px 0 18px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.promo-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.promo-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
 .quick-inquiry-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(227, 97, 76, 0.55);
@@ -221,6 +241,11 @@
     <img src="images/bally-youth.png" alt="Profile" class="profile-img" />
     <h1>🏀⚽발리 유소년🏸🎀</h1>
     <div class="subtitle">성장기 유소년을 위한 맞춤 체육 프로그램</div>
+
+    <a href="promotion.html" class="promo-banner" aria-label="발리유소년 여름방학특강 모집 안내">
+      <img src="images/promotion.png?v=20260604-1456" alt="발리유소년 여름방학특강 선착순 모집 중" />
+    </a>
+
     <a href="quick_inquiry.html" class="quick-inquiry-btn">
       💬 빠른 상담/문의하기
     </a>
