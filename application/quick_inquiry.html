@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>빠른 상담 문의 | 발리유소년</title>
+  <title data-en="Quick Inquiry | BALLY JUNIOR">빠른 상담 문의 | 발리유소년</title>
   <link rel="icon" href="images/favicon.ico">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -193,48 +193,50 @@
   </style>
 </head>
 <body>
+  <button type="button" class="lang bb-lang-btn" aria-label="Language / 언어"
+     style="position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:9px 14px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">KR</button>
   <a href="../" class="bb-back-btn" aria-label="BALLY BALLY 메인으로 돌아가기"
      style="position:fixed;top:16px;left:16px;z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">
     <span style="display:inline-flex;gap:3px;">
       <i style="width:9px;height:9px;border-radius:50%;background:#FF5F14;display:block;"></i>
       <i style="width:9px;height:9px;border-radius:50%;background:#C90404;display:block;"></i>
     </span>
-    ← 메인으로
+    <span data-en="← Back to Main">← 메인으로</span>
   </a>
 
   <div class="container">
-    <h1>💬 빠른 상담 문의</h1>
-    <div class="subtitle">간단히 알려주시면 빠르게 안내드려요</div>
+    <h1 data-en="💬 Quick Inquiry">💬 빠른 상담 문의</h1>
+    <div class="subtitle" data-en="Tell us briefly and we'll get back to you fast">간단히 알려주시면 빠르게 안내드려요</div>
 
-    <div class="section-title">문의 종목 <span class="hint">(여러 개 선택 가능)</span></div>
+    <div class="section-title" data-en="Sport(s) <span class='hint'>(select multiple)</span>">문의 종목 <span class="hint">(여러 개 선택 가능)</span></div>
     <div class="chip-group" id="sportGroup">
-      <div class="chip" data-value="축구/풋살">⚽️ 축구/풋살</div>
-      <div class="chip" data-value="농구">🏀 농구</div>
-      <div class="chip" data-value="배드민턴/피클볼">🏸 배드민턴/피클볼</div>
-      <div class="chip" data-value="인라인/생활체육">🤸 인라인/생활체육</div>
-      <div class="chip" data-value="필라테스">🧘🏻‍♀️ 필라테스</div>
-      <div class="chip" data-value="방송댄스">🎀 방송댄스</div>
+      <div class="chip" data-value="축구/풋살" data-en="⚽️ Soccer / Futsal">⚽️ 축구/풋살</div>
+      <div class="chip" data-value="농구" data-en="🏀 Basketball">🏀 농구</div>
+      <div class="chip" data-value="배드민턴/피클볼" data-en="🏸 Badminton / Pickleball">🏸 배드민턴/피클볼</div>
+      <div class="chip" data-value="인라인/생활체육" data-en="🤸 Inline / Fitness">🤸 인라인/생활체육</div>
+      <div class="chip" data-value="필라테스" data-en="🧘🏻‍♀️ Pilates">🧘🏻‍♀️ 필라테스</div>
+      <div class="chip" data-value="방송댄스" data-en="🎀 K-Pop Dance">🎀 방송댄스</div>
     </div>
 
-    <div class="section-title">문의 내용 <span class="hint">(여러 개 선택 가능)</span></div>
+    <div class="section-title" data-en="Inquiry type <span class='hint'>(select multiple)</span>">문의 내용 <span class="hint">(여러 개 선택 가능)</span></div>
     <div class="chip-group" id="topicGroup">
-      <div class="chip" data-value="가격 궁금해요">가격 궁금해요</div>
-      <div class="chip" data-value="스케줄 궁금해요">스케줄 궁금해요</div>
-      <div class="chip span-full" data-value="전반적인 상담 원해요">전반적인 상담 원해요</div>
+      <div class="chip" data-value="가격 궁금해요" data-en="Pricing">가격 궁금해요</div>
+      <div class="chip" data-value="스케줄 궁금해요" data-en="Schedule">스케줄 궁금해요</div>
+      <div class="chip span-full" data-value="전반적인 상담 원해요" data-en="General consultation">전반적인 상담 원해요</div>
     </div>
 
     <div class="input-group">
-      <label class="input-label" for="name">학부모님 성함</label>
+      <label class="input-label" for="name" data-en="Parent's name">학부모님 성함</label>
       <input class="input-field" id="name" type="text" placeholder="홍길동" required>
     </div>
 
     <div class="input-group">
-      <label class="input-label" for="phone">연락처</label>
+      <label class="input-label" for="phone" data-en="Phone">연락처</label>
       <input class="input-field" id="phone" type="tel" placeholder="010-1234-5678" pattern="[0-9\-]{10,13}" required>
     </div>
 
-    <button class="submit-btn" id="submitBtn" type="button">문의 보내기</button>
-    <a href="index.html" class="back-link">← 홈으로 돌아가기</a>
+    <button class="submit-btn" id="submitBtn" type="button" data-en="Send Inquiry">문의 보내기</button>
+    <a href="index.html" class="back-link" data-en="← Back to Home">← 홈으로 돌아가기</a>
   </div>
 
   <script>
@@ -290,5 +292,6 @@
       }, 600);
     });
   </script>
+  <script src="../assets/i18n.js?v=20260626b"></script>
 </body>
 </html>

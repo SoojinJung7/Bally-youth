@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>강사 프로필 | 발리 유소년 농구</title>
+  <title data-en="Coach Profiles | BALLY JUNIOR Basketball">강사 프로필 | 발리 유소년 농구</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="../css/common.css?v=20260303">
@@ -10,18 +10,21 @@
 </head>
 
 <body>
+  <button type="button" class="lang bb-lang-btn" aria-label="Language / 언어"
+     style="position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:9px 14px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">KR</button>
+
   <a href="../../" class="bb-back-btn" aria-label="BALLY BALLY 메인으로 돌아가기"
      style="position:fixed;top:16px;left:16px;z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">
     <span style="display:inline-flex;gap:3px;">
       <i style="width:9px;height:9px;border-radius:50%;background:#FF5F14;display:block;"></i>
       <i style="width:9px;height:9px;border-radius:50%;background:#C90404;display:block;"></i>
     </span>
-    ← 메인으로
+    <span data-en="← Back to Main">← 메인으로</span>
   </a>
 
 
 <div class="card">
-  <div class="title">강사 프로필 보기</div>
+  <div class="title" data-en="View Coach Profiles">강사 프로필 보기</div>
 
   <div class="profile-list">
 
@@ -29,8 +32,8 @@
     <div class="profile-card" onclick="location.href='../coaches/basketball_profile_leehun.html'">
       <img class="profile-img" src="../images/coaches/leehun/lee_1.png" alt="이헌" />
       <div class="profile-text">
-        <div class="name">이헌</div>
-        <div class="desc">
+        <div class="name" data-en="Lee Heon">이헌</div>
+        <div class="desc" data-en="Former Incheon Electroland pro player<br/> International-school team classes &amp; national-team focus<br/> Teaches teamwork &amp; base fitness">
           前 인천 전자랜드 프로선수<br/>
           국제학교 팀수업, 대표팀 전문<br/>
           팀워크·기초체력 중심 지도
@@ -42,8 +45,8 @@
     <div class="profile-card" onclick="location.href='../coaches/basketball_profile_wooyeon.html'">
       <img class="profile-img" src="../images/coaches/wooyeon/wooyeon_thumb.png" alt="최우연" />
       <div class="profile-text">
-        <div class="name">최우연</div>
-        <div class="desc">
+        <div class="name" data-en="Choi Woo-yeon">최우연</div>
+        <div class="desc" data-en="Former Incheon Electroland pro player<br/> Level-based personalized lessons">
           前 인천 전자랜드 프로선수<br/>
           수준별 맞춤 레슨
         </div>
@@ -54,8 +57,8 @@
     <div class="profile-card" onclick="location.href='../coaches/basketball_profile_dahun.html'">
       <img class="profile-img" src="../images/coaches/dahun/dahun_1.png" alt="이다헌" />
       <div class="profile-text">
-        <div class="name">이다헌</div>
-        <div class="desc">
+        <div class="name" data-en="Lee Da-heon">이다헌</div>
+        <div class="desc" data-en="School PE &amp; club coaching experience<br/> Fun basketball classes">
           학교체육·클럽 지도 경험<br/>
           즐거운 농구 수업
         </div>
@@ -66,8 +69,8 @@
     <div class="profile-card" onclick="location.href='../coaches/basketball_profile_jooyoung.html'">
       <img class="profile-img" src="../images/coaches/jooyoung/jooyoung_thumb.png" alt="최주영" />
       <div class="profile-text">
-        <div class="name">최주영</div>
-        <div class="desc">
+        <div class="name" data-en="Choi Joo-young">최주영</div>
+        <div class="desc" data-en="Former Daegu KOGAS Pegasus pro<br/> Former Sangmu basketball team<br/> Teaches fundamentals &amp; growth">
           前 대구 한국가스공사 페가수스 프로<br/>
           前 상무 농구단 출신<br/>
           기본기·성장 중심 지도
@@ -77,16 +80,17 @@
 
   </div>
 
-  <div class="footer-text">
+  <div class="footer-text" data-en="Basketball — great for teamwork and healthy growth!!">
     팀워크, 키성장에 도움되는 Basketball!!
   </div>
 </div>
 
 <div style="height:130px;"></div>
 <div class="back-home">
-  <a href="../promotion.html">발리유소년 스케줄</a>
-  <a href="../index.html">홈으로 돌아가기</a>
+  <a href="../promotion.html" data-en="BALLY JUNIOR Schedule">발리유소년 스케줄</a>
+  <a href="../index.html" data-en="Back to Home">홈으로 돌아가기</a>
 </div>
 
+  <script src="../../assets/i18n.js?v=20260626b"></script>
 </body>
 </html>

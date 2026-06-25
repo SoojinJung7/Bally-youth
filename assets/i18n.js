@@ -12,11 +12,13 @@
   var lang = localStorage.getItem(KEY) || "ko";
 
   function swap(el) {
+    // innerHTML so translations can include simple inline markup (e.g. <br>).
+    // All data-en / data-ko values are author-controlled — no user input.
     if (el.getAttribute("data-ko") === null) {
-      el.setAttribute("data-ko", el.textContent);
+      el.setAttribute("data-ko", el.innerHTML);
     }
     var en = el.getAttribute("data-en");
-    el.textContent = (lang === "en" && en !== null) ? en : el.getAttribute("data-ko");
+    el.innerHTML = (lang === "en" && en !== null) ? en : el.getAttribute("data-ko");
   }
 
   function apply(next) {

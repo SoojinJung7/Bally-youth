@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>필라테스 강사 프로필 | 발리 유소년</title>
+  <title data-en="Pilates Coach Profiles | BALLY JUNIOR">필라테스 강사 프로필 | 발리 유소년</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="../css/common.css?v=20260303">
@@ -10,18 +10,21 @@
 </head>
 
 <body>
+  <button type="button" class="lang bb-lang-btn" aria-label="Language / 언어"
+     style="position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:9px 14px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">KR</button>
+
   <a href="../../" class="bb-back-btn" aria-label="BALLY BALLY 메인으로 돌아가기"
      style="position:fixed;top:16px;left:16px;z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">
     <span style="display:inline-flex;gap:3px;">
       <i style="width:9px;height:9px;border-radius:50%;background:#FF5F14;display:block;"></i>
       <i style="width:9px;height:9px;border-radius:50%;background:#C90404;display:block;"></i>
     </span>
-    ← 메인으로
+    <span data-en="← Back to Main">← 메인으로</span>
   </a>
 
 
 <div class="card">
-  <div class="title">강사 프로필 보기</div>
+  <div class="title" data-en="View Coach Profiles">강사 프로필 보기</div>
 
   <div class="profile-list">
 
@@ -30,8 +33,8 @@
          onclick="location.href='../coaches/pilates_profile_suji.html'">
       <img class="profile-img" src="../images/coaches/suji/suji.jpg" alt="김수지" />
       <div class="profile-text">
-        <div class="name">김수지</div>
-        <div class="desc">
+        <div class="name" data-en="Kim Su-ji">김수지</div>
+        <div class="desc" data-en="Leads regular Kids Pilates classes<br/> 1:1 / Duet / Small group">
           키즈 필라테스 정규반 전담<br/>
           1:1 / 듀엣 / 소그룹
         </div>
@@ -43,8 +46,8 @@
          onclick="location.href='../coaches/pilates_profile_minseo.html'">
       <img class="profile-img" src="../images/coaches/minseo/minseosmall.png" alt="김민서" />
       <div class="profile-text">
-        <div class="name">김민서</div>
-        <div class="desc">
+        <div class="name" data-en="Kim Min-seo">김민서</div>
+        <div class="desc" data-en="Leads regular Kids Pilates classes<br/> 1:1 / Duet / Small group">
           키즈 필라테스 정규반 전담<br/>
           1:1 / 듀엣 / 소그룹
         </div>
@@ -54,8 +57,8 @@
          onclick="location.href='../coaches/pilates_profile_eunyoung.html'">
       <img class="profile-img" src="../images/coaches/eunyoung/eunyoungsmall.png" alt="박은영" />
       <div class="profile-text">
-        <div class="name">박은영</div>
-        <div class="desc">
+        <div class="name" data-en="Park Eun-young">박은영</div>
+        <div class="desc" data-en="Kids Pilates Tue/Thu 10AM<br/> Core-strength focus">
           키즈 필라테스 화목 10시<br/>
           코어 강화 집중
         </div>
@@ -66,8 +69,8 @@
          onclick="location.href='../coaches/pilates_profile_jisun.html'">
       <img class="profile-img" src="../images/coaches/jisun/jisunsmall.jpg" alt="강지순" />
       <div class="profile-text">
-        <div class="name">강지순</div>
-        <div class="desc">
+        <div class="name" data-en="Kang Ji-sun">강지순</div>
+        <div class="desc" data-en="Kids Pilates Wed 10AM<br/> Improves focus &amp; cognition">
           키즈 필라테스 수요 10시<br/>
           인지력집중력 개선
         </div>
@@ -78,8 +81,8 @@
          onclick="location.href='../coaches/pilates_profile_chaehwan.html'">
       <img class="profile-img" src="../images/coaches/chaehwan/chaehwansmall.png" alt="김채환" />
       <div class="profile-text">
-        <div class="name">김채환</div>
-        <div class="desc">
+        <div class="name" data-en="Kim Chae-hwan">김채환</div>
+        <div class="desc" data-en="Boys' Kids Pilates lead instructor<br/> Alignment-based teaching">
           남아 키즈 필라테스 전담강사<br/>
           정렬 기반 티칭
         </div>
@@ -90,13 +93,14 @@
 
   </div>
 
-  <div class="footer-text">
+  <div class="footer-text" data-en="Good posture and a strong core are the foundation of growth!">
     성장의 기반은 바른자세와 코어입니다!
   </div>
 <div class="back-home">
-  <a href="../promotion.html">발리유소년 스케줄</a>
-  <a href="../index.html">홈으로 돌아가기</a>
+  <a href="../promotion.html" data-en="BALLY JUNIOR Schedule">발리유소년 스케줄</a>
+  <a href="../index.html" data-en="Back to Home">홈으로 돌아가기</a>
 </div>
 
+  <script src="../../assets/i18n.js?v=20260626b"></script>
 </body>
 </html>
