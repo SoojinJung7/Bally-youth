@@ -614,9 +614,15 @@ a { color: inherit; text-decoration: none; }
     /* clear the full panel height PLUS the 72px header offset so the
        bottom item (발리 유소년 CTA) never peeks at the top edge */
     transform: translateY(calc(-100% - 96px));
-    transition: transform 0.4s var(--ease);
+    /* NO transition while closed: crossing the breakpoint (or resizing)
+       must never animate the panel into view. The slide only plays when
+       opening the hamburger (see .nav.open below). */
+    transition: none;
   }
-  .nav.open { transform: translateY(0); }
+  .nav.open {
+    transform: translateY(0);
+    transition: transform 0.35s var(--ease);
+  }
   .nav a { padding: 16px 24px; font-size: 16px; }
   .nav a::after { display: none; }
   .menu-toggle { display: flex; }
