@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>키즈 방송댄스 페이지</title>
+  <title data-en="Kids K-Pop Dance">키즈 방송댄스 페이지</title>
 
   <!-- 공통 CSS -->
   <link rel="stylesheet" href="../css/common.css?v=20260303">
@@ -11,18 +11,21 @@
 </head>
 
 <body>
+  <button type="button" class="lang bb-lang-btn" aria-label="Language / 언어"
+     style="position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:9px 14px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">KR</button>
+
   <a href="../../" class="bb-back-btn" aria-label="BALLY BALLY 메인으로 돌아가기"
      style="position:fixed;top:16px;left:16px;z-index:9999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:999px;background:#1A1919;color:#F5F2EF;font-family:system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);">
     <span style="display:inline-flex;gap:3px;">
       <i style="width:9px;height:9px;border-radius:50%;background:#FF5F14;display:block;"></i>
       <i style="width:9px;height:9px;border-radius:50%;background:#C90404;display:block;"></i>
     </span>
-    ← 메인으로
+    <span data-en="← Back to Main">← 메인으로</span>
   </a>
 
 
 <div class="container">
-  <h1>필립과 함께하는 발리유소년 키즈 방송댄스!</h1>
+  <h1 data-en="BALLY JUNIOR Kids K-Pop Dance with Philip!">필립과 함께하는 발리유소년 키즈 방송댄스!</h1>
 
   <div class="card-grid">
 
@@ -36,7 +39,7 @@
                 <!-- <img src="../images/coaches/xxx/xxx.png"> -->
       </div>
 
-      <div class="teacher-name">방송댄스 강사 프로필 보기</div>
+      <div class="teacher-name" data-en="View Coach Profiles">방송댄스 강사 프로필 보기</div>
     </div>
 
     <!-- ✅ 인스타그램 -->
@@ -47,19 +50,20 @@
         <img src="../images/instagram_logo.png" alt="인스타그램">
       </div>
 
-      <div class="teacher-name">발리유소년 인스타그램</div>
+      <div class="teacher-name" data-en="BALLY JUNIOR Instagram">발리유소년 인스타그램</div>
     </div>
 
   </div>
 
-  <footer>무대 위 주인공은 바로 나! 아이돌이 되어보아요~!</footer>
+  <footer data-en="You're the star on stage — become an idol!">무대 위 주인공은 바로 나! 아이돌이 되어보아요~!</footer>
 </div>
 
 <div style="height:130px;"></div>
 <div class="back-home">
-  <a href="../promotion.html">🏃 운동종목 보러가기</a>
-  <a href="../index.html">홈으로 돌아가기</a>
+  <a href="../promotion.html" data-en="🏃 Browse Sports">🏃 운동종목 보러가기</a>
+  <a href="../index.html" data-en="Back to Home">홈으로 돌아가기</a>
 </div>
 
+  <script src="../../assets/i18n.js?v=20260626"></script>
 </body>
 </html>
