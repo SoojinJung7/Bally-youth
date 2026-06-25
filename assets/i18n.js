@@ -1,4 +1,4 @@
-/* ===== BALLY BALLY — manual KR/EN i18n =====
+/* ===== BALLY JUNIOR — manual KR/EN i18n =====
    Translatable elements carry a data-en="..." attribute holding the English
    text. The original Korean is captured into data-ko on first run. Toggling
    swaps textContent between the two and persists the choice in localStorage.
@@ -50,6 +50,35 @@
     apply(lang);
     document.querySelectorAll(".lang").forEach(function (b) {
       b.addEventListener("click", function () { apply(lang === "en" ? "ko" : "en"); });
+    });
+  });
+})();
+
+/* ===== Casual media-save deterrent =====
+   Blocks right-click / long-press save, image drag, and the video
+   download button. NOT foolproof — a determined user can still pull
+   media via dev tools / network tab — but it stops the casual copy. */
+(function () {
+  "use strict";
+  // block right-click & mobile long-press context menu site-wide
+  document.addEventListener("contextmenu", function (e) { e.preventDefault(); }, false);
+
+  // CSS: disable touch-callout, drag, and the native download control
+  var st = document.createElement("style");
+  st.textContent =
+    "img,video{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none;}" +
+    "video::-webkit-media-controls-download-button{display:none!important;}" +
+    "video::-internal-media-controls-download-button{display:none!important;}";
+  (document.head || document.documentElement).appendChild(st);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img, video").forEach(function (el) {
+      el.setAttribute("draggable", "false");
+      el.addEventListener("dragstart", function (e) { e.preventDefault(); });
+    });
+    document.querySelectorAll("video").forEach(function (v) {
+      v.setAttribute("controlsList", "nodownload");
+      v.setAttribute("disablePictureInPicture", "");
     });
   });
 })();

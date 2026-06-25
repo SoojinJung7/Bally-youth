@@ -1,4 +1,4 @@
-/* ===== BALLY BALLY — interactions ===== */
+/* ===== BALLY JUNIOR — interactions ===== */
 (function () {
   "use strict";
 
