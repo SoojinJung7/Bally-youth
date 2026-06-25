@@ -14,17 +14,25 @@
   function swap(el) {
     // innerHTML so translations can include simple inline markup (e.g. <br>).
     // All data-en / data-ko values are author-controlled — no user input.
-    if (el.getAttribute("data-ko") === null) {
-      el.setAttribute("data-ko", el.innerHTML);
+    if (el.hasAttribute("data-en")) {
+      if (el.getAttribute("data-ko") === null) {
+        el.setAttribute("data-ko", el.innerHTML);
+      }
+      el.innerHTML = (lang === "en") ? el.getAttribute("data-en") : el.getAttribute("data-ko");
     }
-    var en = el.getAttribute("data-en");
-    el.innerHTML = (lang === "en" && en !== null) ? en : el.getAttribute("data-ko");
+    // placeholder translation for form fields
+    if (el.hasAttribute("data-en-ph")) {
+      if (el.getAttribute("data-ko-ph") === null) {
+        el.setAttribute("data-ko-ph", el.getAttribute("placeholder") || "");
+      }
+      el.setAttribute("placeholder", (lang === "en") ? el.getAttribute("data-en-ph") : el.getAttribute("data-ko-ph"));
+    }
   }
 
   function apply(next) {
     lang = (next === "en") ? "en" : "ko";
     document.documentElement.lang = lang;
-    document.querySelectorAll("[data-en]").forEach(swap);
+    document.querySelectorAll("[data-en], [data-en-ph]").forEach(swap);
     document.querySelectorAll(".lang").forEach(function (b) {
       b.textContent = (lang === "en") ? "EN" : "KR";
     });
