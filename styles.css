@@ -592,6 +592,15 @@ a { color: inherit; text-decoration: none; }
 .admin-link { color: var(--orange); font-weight: 700; }
 .admin-link:hover { color: var(--red); }
 
+/* While the window is actively resizing, kill all transitions so the
+   mobile-nav panel (and other transitioned elements) don't flash/slide
+   as breakpoints cross. Re-enabled shortly after resizing stops. */
+.is-resizing *,
+.is-resizing *::before,
+.is-resizing *::after {
+  transition: none !important;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 880px) {
   .nav {

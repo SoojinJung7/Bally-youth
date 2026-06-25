@@ -257,6 +257,23 @@
     langBtn.textContent = langBtn.textContent === "KR" ? "EN" : "KR";
   });
 
+  // ----- Suppress transition flicker while resizing -----
+  var root = document.documentElement;
+  var resizeEnd;
+  window.addEventListener("resize", function () {
+    root.classList.add("is-resizing");
+    clearTimeout(resizeEnd);
+    resizeEnd = setTimeout(function () {
+      root.classList.remove("is-resizing");
+    }, 200);
+    // leaving mobile width: make sure the menu isn't stuck open
+    if (window.innerWidth > 880 && nav.classList.contains("open")) {
+      nav.classList.remove("open");
+      toggle.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  }, { passive: true });
+
   // ----- Reveal on scroll -----
   var revealEls = document.querySelectorAll(".card, .work");
   if ("IntersectionObserver" in window) {
