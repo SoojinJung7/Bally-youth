@@ -611,7 +611,9 @@ a { color: inherit; text-decoration: none; }
     background: var(--ink-soft);
     border-bottom: 1px solid var(--line);
     padding: 8px 0;
-    transform: translateY(-120%);
+    /* clear the full panel height PLUS the 72px header offset so the
+       bottom item (발리 유소년 CTA) never peeks at the top edge */
+    transform: translateY(calc(-100% - 96px));
     transition: transform 0.4s var(--ease);
   }
   .nav.open { transform: translateY(0); }
