@@ -66,7 +66,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 18px;
 }
 .brand-logo {
-  height: 20px;
+  height: 26px;
   width: auto;
   display: block;
 }
@@ -93,10 +93,17 @@ a { color: inherit; text-decoration: none; }
 }
 .nav a:hover { color: var(--white); }
 .nav a:hover::after { width: 100%; }
+/* Works: visible label but not a link (submenu planned) */
+.nav a.nav-static { cursor: default; }
+
 .nav a.nav-cta {
   color: var(--ink);
   background: var(--orange);
-  padding: 8px 16px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  font-size: 13px;
   border-radius: 999px;
   transition: background 0.25s var(--ease), color 0.25s var(--ease);
 }
@@ -111,7 +118,10 @@ a { color: inherit; text-decoration: none; }
   font-family: inherit;
   font-weight: 700;
   font-size: 13px;
-  padding: 7px 12px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
   border-radius: 999px;
   cursor: pointer;
   transition: border-color 0.25s, color 0.25s;
