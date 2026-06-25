@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🏀⚽발리 유소년🏸🎀</title>
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#E3614C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="발리유소년">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #F9D976, #F39F86, #B17DC5);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+      color: #333;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+  
+    h1 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 10px;
+      margin: 0 0 20px;
+    }
+
+    .action-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #333;
+      text-decoration: none;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      background: #f5f5f5;
+      transform: translateY(-2px);
+    }
+
+.floating-call {
+  position: fixed;
+  right: 16px;
+  bottom: 20px;
+  z-index: 999;
+
+  background: #e63946;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.quick-inquiry-btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0 18px;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #E3614C, #D9434C);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(227, 97, 76, 0.4);
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.promo-banner {
+  display: block;
+  margin: 6px 0 18px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.promo-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.promo-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.quick-inquiry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(227, 97, 76, 0.55);
+}
+
+/* 태블릿 가로/세로 모드: 카드와 타이포를 살짝 키워 여백 조정 */
+@media (min-width: 768px) {
+  body { padding: 48px 24px; }
+
+  .container {
+    max-width: 560px;
+    padding: 40px 36px;
+    border-radius: 24px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 18px;
+  }
+
+  h1 { font-size: 22px; margin-bottom: 6px; }
+  .subtitle { font-size: 16px; margin-bottom: 12px; }
+
+  .action-btn {
+    padding: 16px 12px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+
+  .quick-inquiry-btn {
+    padding: 18px;
+    font-size: 19px;
+    margin: 10px 0 22px;
+  }
+
+  .floating-call {
+    right: 24px;
+    bottom: 28px;
+    padding: 16px 22px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container { max-width: 620px; padding: 44px 40px; }
+  h1 { font-size: 24px; }
+  .subtitle { font-size: 17px; }
+  .action-btn { font-size: 17px; padding: 17px 14px; }
+  .quick-inquiry-btn { font-size: 20px; padding: 19px; }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="images/bally-youth.png" alt="Profile" class="profile-img" />
+    <h1>🏀⚽발리 유소년🏸🎀</h1>
+    <div class="subtitle">성장기 유소년을 위한 맞춤 체육 프로그램</div>
+
+    <a href="promotion.html" class="promo-banner" aria-label="발리유소년 여름방학특강 모집 안내">
+      <img src="images/promotion.png?v=20260604-1456" alt="발리유소년 여름방학특강" />
+    </a>
+
+    <a href="quick_inquiry.html" class="quick-inquiry-btn">
+      💬 빠른 상담/문의하기
+    </a>
+
+    <div class="action-row">
+      <a href="promotion.html" class="action-btn">🏃 운동종목 보러가기</a>
+      <a href="https://blog.naver.com/PostList.naver?blogId=sportsclub__phillip&from=postList&categoryNo=10"
+         target="_blank" rel="noopener noreferrer"
+         class="action-btn">🧸 발리유소년 블로그</a>
+    </div>
+
+    <div style="margin-top: 5px; font-size: 16px; color: #832929;">
+      성장기 운동, 발리유소년과 함께!
+  </div>
+
+  
+
+
+  <a href="tel:0317287778" class="floating-call">
+  📞 바로 상담하기
+</a>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js').catch(function(err) {
+        console.error('SW registration failed:', err);
+      });
+    });
+  }
+
+  // 카운터 키오스크: 07:00-23:00 화면 항상 켜짐
+  (function() {
+    if (!('wakeLock' in navigator)) return;
+    var wakeLock = null;
+    var START_HOUR = 7;
+    var END_HOUR = 23;
+
+    async function acquire() {
+      if (wakeLock) return;
+      try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        wakeLock.addEventListener('release', function() { wakeLock = null; });
+      } catch (e) {}
+    }
+    async function release() {
+      if (!wakeLock) return;
+      try { await wakeLock.release(); } catch (e) {}
+      wakeLock = null;
+    }
+    async function update() {
+      var h = new Date().getHours();
+      if (h >= START_HOUR && h < END_HOUR) await acquire();
+      else await release();
+    }
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') update();
+    });
+    update();
+    setInterval(update, 60000);
+  })();
+</script>
+
+</body>
+</html>
+

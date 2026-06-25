@@ -2,282 +2,175 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🏀⚽발리 유소년🏸🎀</title>
-  <link rel="icon" href="images/favicon.ico">
-
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#E3614C">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="발리유소년">
-  <link rel="apple-touch-icon" href="/images/icon-192.png">
-
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #F9D976, #F39F86, #B17DC5);
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 15px;
-      color: #333;
-    }
-
-    .container {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 30px 20px;
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-  
-    h1 {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 10px;
-    }
-
-    .action-row {
-      display: flex;
-      gap: 10px;
-      margin: 0 0 20px;
-    }
-
-    .action-btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 10px;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.3;
-      color: #333;
-      text-decoration: none;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: all 0.2s ease;
-    }
-
-    .action-btn:hover {
-      background: #f5f5f5;
-      transform: translateY(-2px);
-    }
-
-.floating-call {
-  position: fixed;
-  right: 16px;
-  bottom: 20px;
-  z-index: 999;
-
-  background: #e63946;
-  color: #fff;
-  padding: 14px 18px;
-  border-radius: 999px;
-
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-.quick-inquiry-btn {
-  display: block;
-  width: 100%;
-  margin: 8px 0 18px;
-  padding: 16px;
-  font-size: 17px;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  background: linear-gradient(135deg, #E3614C, #D9434C);
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(227, 97, 76, 0.4);
-  transition: all 0.2s ease;
-  text-align: center;
-}
-
-.promo-banner {
-  display: block;
-  margin: 6px 0 18px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  transition: all 0.2s ease;
-}
-
-.promo-banner img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.promo-banner:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-}
-
-.quick-inquiry-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(227, 97, 76, 0.55);
-}
-
-/* 태블릿 가로/세로 모드: 카드와 타이포를 살짝 키워 여백 조정 */
-@media (min-width: 768px) {
-  body { padding: 48px 24px; }
-
-  .container {
-    max-width: 560px;
-    padding: 40px 36px;
-    border-radius: 24px;
-  }
-
-  .profile-img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 18px;
-  }
-
-  h1 { font-size: 22px; margin-bottom: 6px; }
-  .subtitle { font-size: 16px; margin-bottom: 12px; }
-
-  .action-btn {
-    padding: 16px 12px;
-    font-size: 16px;
-    border-radius: 16px;
-  }
-
-  .quick-inquiry-btn {
-    padding: 18px;
-    font-size: 19px;
-    margin: 10px 0 22px;
-  }
-
-  .floating-call {
-    right: 24px;
-    bottom: 28px;
-    padding: 16px 22px;
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container { max-width: 620px; padding: 44px 40px; }
-  h1 { font-size: 24px; }
-  .subtitle { font-size: 17px; }
-  .action-btn { font-size: 17px; padding: 17px 14px; }
-  .quick-inquiry-btn { font-size: 20px; padding: 19px; }
-}
-
-
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BALLY BALLY — Playground for Bold Ideas</title>
+  <meta name="description" content="BALLY BALLY — Soojin Jung의 개인 프로젝트 스튜디오. 대담한 아이디어가 노는 곳." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231A1919'/%3E%3Ccircle cx='38' cy='50' r='18' fill='%23FF5F14'/%3E%3Ccircle cx='66' cy='50' r='18' fill='%23C90404'/%3E%3C/svg%3E" />
 </head>
 <body>
-
-  <div class="container">
-    <img src="images/bally-youth.png" alt="Profile" class="profile-img" />
-    <h1>🏀⚽발리 유소년🏸🎀</h1>
-    <div class="subtitle">성장기 유소년을 위한 맞춤 체육 프로그램</div>
-
-    <a href="promotion.html" class="promo-banner" aria-label="발리유소년 여름방학특강 모집 안내">
-      <img src="images/promotion.png?v=20260604-1456" alt="발리유소년 여름방학특강" />
-    </a>
-
-    <a href="quick_inquiry.html" class="quick-inquiry-btn">
-      💬 빠른 상담/문의하기
-    </a>
-
-    <div class="action-row">
-      <a href="promotion.html" class="action-btn">🏃 운동종목 보러가기</a>
-      <a href="https://blog.naver.com/PostList.naver?blogId=sportsclub__phillip&from=postList&categoryNo=10"
-         target="_blank" rel="noopener noreferrer"
-         class="action-btn">🧸 발리유소년 블로그</a>
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="BALLY BALLY home">
+        <span class="brand-dots"><i></i><i></i></span>
+        <span class="brand-name">BALLY&nbsp;BALLY</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#works">Works</a>
+        <a href="#updates">Updates</a>
+        <a href="#stats">Numbers</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="application/" class="nav-cta">발리 유소년 →</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang" id="langBtn" type="button">KR</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <div style="margin-top: 5px; font-size: 16px; color: #832929;">
-      성장기 운동, 발리유소년과 함께!
-  </div>
+  <!-- ===== Hero ===== -->
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
+        <!-- slides injected from assets/slides.json by script.js -->
+      </div>
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>PLAY&nbsp;·&nbsp;BUILD&nbsp;·&nbsp;SHIP&nbsp;·&nbsp;REPEAT&nbsp;·&nbsp;</span>
+          <span>PLAY&nbsp;·&nbsp;BUILD&nbsp;·&nbsp;SHIP&nbsp;·&nbsp;REPEAT&nbsp;·&nbsp;</span>
+        </div>
+      </div>
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">A personal project studio</p>
+        <h1 class="hero-title">
+          <span class="line">PLAYGROUND</span>
+          <span class="line">FOR <span class="accent">BOLD</span></span>
+          <span class="line">IDEAS<span class="dot-orange">.</span></span>
+        </h1>
+        <p class="hero-sub">
+          BALLY BALLY는 Soojin Jung이 직접 만들고 실험하는 프로젝트들이 모이는 공간입니다.
+          빠르게 만들고, 대담하게 보여줍니다.
+        </p>
+        <div class="hero-cta">
+          <a href="#works" class="btn btn-primary">프로젝트 보기</a>
+          <a href="#contact" class="btn btn-ghost">함께하기 →</a>
+        </div>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
 
-  
+    <!-- ===== BALLY NEWS ===== -->
+    <section class="section news" id="updates">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">BALLY NEWS</h2>
+          <a href="#" class="section-link">전체 보기 →</a>
+        </div>
+        <div class="news-feature">
+          <div class="news-video">
+            <video id="newsVideo" controls playsinline muted preload="metadata" poster="assets/slides/slide-1.jpg">
+              브라우저가 영상을 지원하지 않습니다.
+            </video>
+          </div>
+          <div class="news-content">
+            <span class="news-index" id="newsIndex">01 / 03</span>
+            <h3 class="news-title" id="newsTitle">발리 유소년 축구 홍보 영상</h3>
+            <p class="news-body" id="newsBody">영상을 불러오는 중입니다…</p>
+            <div class="news-dots" id="newsDots" aria-label="영상 선택"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ===== Works ===== -->
+    <section class="section works" id="works">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">BALLY SPORTS</h2>
+          <p class="section-desc">발리 유소년이 함께하는 스포츠 종목들.</p>
+        </div>
+        <div class="works-grid" id="worksGrid">
+          <!-- tiles injected by script.js -->
+        </div>
+      </div>
+    </section>
 
-  <a href="tel:0317287778" class="floating-call">
-  📞 바로 상담하기
-</a>
+    <!-- ===== Stats ===== -->
+    <section class="section stats" id="stats">
+      <div class="container stats-inner">
+        <div class="stat">
+          <span class="stat-num" data-target="12">0</span>
+          <span class="stat-label">Projects shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="48">0</span>
+          <span class="stat-label">Experiments</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-label">Years building</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="100" data-suffix="%">0</span>
+          <span class="stat-label">Made with love</span>
+        </div>
+      </div>
+    </section>
 
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').catch(function(err) {
-        console.error('SW registration failed:', err);
-      });
-    });
-  }
+    <!-- ===== About ===== -->
+    <section class="section about" id="about">
+      <div class="container about-inner">
+        <h2 class="section-title">ABOUT</h2>
+        <p class="about-lead">
+          <span class="accent">BALLY BALLY</span>는 "빨리빨리" 정신으로 움직이는 1인 프로젝트 스튜디오입니다.
+        </p>
+        <p class="about-body">
+          완벽한 계획보다 빠른 실행을 믿습니다. 아이디어가 떠오르면 만들고, 만들면 보여주고,
+          피드백을 받으면 다시 만듭니다. 이 사이트는 그 과정을 기록하고 공유하기 위한 홈베이스입니다.
+        </p>
+      </div>
+    </section>
 
-  // 카운터 키오스크: 07:00-23:00 화면 항상 켜짐
-  (function() {
-    if (!('wakeLock' in navigator)) return;
-    var wakeLock = null;
-    var START_HOUR = 7;
-    var END_HOUR = 23;
+    <!-- ===== Contact CTA ===== -->
+    <section class="section contact" id="contact">
+      <div class="container contact-inner">
+        <h2 class="contact-title">LET'S<br />BUILD<br /><span class="accent">SOMETHING.</span></h2>
+        <a href="mailto:soojinjung7@gmail.com" class="btn btn-primary btn-lg">이메일 보내기</a>
+      </div>
+    </section>
+  </main>
 
-    async function acquire() {
-      if (wakeLock) return;
-      try {
-        wakeLock = await navigator.wakeLock.request('screen');
-        wakeLock.addEventListener('release', function() { wakeLock = null; });
-      } catch (e) {}
-    }
-    async function release() {
-      if (!wakeLock) return;
-      try { await wakeLock.release(); } catch (e) {}
-      wakeLock = null;
-    }
-    async function update() {
-      var h = new Date().getHours();
-      if (h >= START_HOUR && h < END_HOUR) await acquire();
-      else await release();
-    }
-    document.addEventListener('visibilitychange', function() {
-      if (document.visibilityState === 'visible') update();
-    });
-    update();
-    setInterval(update, 60000);
-  })();
-</script>
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a href="#top" class="brand brand-footer">
+          <span class="brand-dots"><i></i><i></i></span>
+          <span class="brand-name">BALLY&nbsp;BALLY</span>
+        </a>
+        <div class="socials">
+          <a href="https://github.com/SoojinJung7" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> BALLY BALLY — a personal project by Soojin Jung.</p>
+        <p class="footer-note"><a href="admin/" class="admin-link">관리자</a> · Design benchmarked structurally; all content original.</p>
+      </div>
+    </div>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
-
