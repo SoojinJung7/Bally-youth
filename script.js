@@ -4,12 +4,12 @@
 
   // ----- Data (original placeholder content) -----
   var works = [
-    { num: "01", cat: "Soccer / Futsal", name: "축구 / 풋살", url: "application/sports/soccer.html", grad: "linear-gradient(135deg,#FF5F14,#C90404)" },
-    { num: "02", cat: "Basketball", name: "농구", url: "application/sports/basketball.html", grad: "linear-gradient(135deg,#C90404,#1A1919)" },
-    { num: "03", cat: "Badminton / Pickleball", name: "배드민턴 / 피클볼", url: "application/sports/badminton.html", grad: "linear-gradient(135deg,#FF5F14,#1A1919)" },
-    { num: "04", cat: "Inline / Fitness", name: "인라인 / 생활체육", url: "application/sports/inline.html", grad: "linear-gradient(135deg,#1A1919,#FF5F14)" },
-    { num: "05", cat: "Pilates", name: "키즈 필라테스", url: "application/sports/pilates.html", grad: "linear-gradient(135deg,#C90404,#FF5F14)" },
-    { num: "06", cat: "Dance", name: "키즈 방송댄스", url: "application/sports/dance.html", grad: "linear-gradient(135deg,#1A1919,#C90404)" }
+    { num: "01", cat: "Soccer / Futsal", name: "축구 / 풋살", en: "Soccer / Futsal", url: "application/sports/soccer.html", grad: "linear-gradient(135deg,#FF5F14,#C90404)" },
+    { num: "02", cat: "Basketball", name: "농구", en: "Basketball", url: "application/sports/basketball.html", grad: "linear-gradient(135deg,#C90404,#1A1919)" },
+    { num: "03", cat: "Badminton / Pickleball", name: "배드민턴 / 피클볼", en: "Badminton / Pickleball", url: "application/sports/badminton.html", grad: "linear-gradient(135deg,#FF5F14,#1A1919)" },
+    { num: "04", cat: "Inline / Fitness", name: "인라인 / 생활체육", en: "Inline / Fitness", url: "application/sports/inline.html", grad: "linear-gradient(135deg,#1A1919,#FF5F14)" },
+    { num: "05", cat: "Pilates", name: "키즈 필라테스", en: "Kids Pilates", url: "application/sports/pilates.html", grad: "linear-gradient(135deg,#C90404,#FF5F14)" },
+    { num: "06", cat: "Dance", name: "키즈 방송댄스", en: "Kids K-Pop Dance", url: "application/sports/dance.html", grad: "linear-gradient(135deg,#1A1919,#C90404)" }
   ];
 
   // ----- Render works -----
@@ -24,10 +24,11 @@
       '<span class="work-num">' + w.num + "</span>" +
       '<div class="work-info">' +
       '<div class="work-cat">' + w.cat + "</div>" +
-      '<div class="work-name">' + w.name + "</div>" +
-      '<div class="work-go">소개 보기 →</div></div>';
+      '<div class="work-name" data-en="' + w.en + '">' + w.name + "</div>" +
+      '<div class="work-go" data-en="View →">소개 보기 →</div></div>';
     wg.appendChild(a);
   });
+  if (window.BallyI18n) window.BallyI18n.apply();
 
   // ----- BALLY NEWS cards (pink carousel, SM-benchmarked) -----
   (function initBallyNews() {
@@ -35,11 +36,11 @@
     if (!track) return;
 
     var news = [
-      { title: "발리 유소년 여름 스포츠 프로모션 시작", body: "축구·농구·배드민턴·필라테스·방송댄스 전 종목 여름 특별 프로모션을 진행합니다. 신규 등록 회원 대상 혜택을 확인하세요.", date: "2026.06.21", url: "application/promotion.html" },
-      { title: "키즈 필라테스 신규 클래스 오픈", body: "성장기 바른 자세와 코어 근력을 위한 키즈 필라테스 클래스가 새롭게 열립니다. 전문 강사진과 함께 시작하세요.", date: "2026.06.14", url: "application/sports/pilates.html" },
-      { title: "키즈 방송댄스, 신규 안무 클래스 공개", body: "최신 K-POP 안무로 구성된 키즈 방송댄스 새 클래스를 공개합니다. 리듬감과 표현력을 함께 키워요.", date: "2026.06.07", url: "application/sports/dance.html" },
-      { title: "농구 클래스 회원 모집 안내", body: "기본기부터 실전 경기 감각까지, 체계적인 커리큘럼의 농구 클래스 회원을 모집합니다.", date: "2026.05.30", url: "application/sports/basketball.html" },
-      { title: "축구 · 풋살 정규 클래스 일정 업데이트", body: "여름 시즌 축구·풋살 정규 클래스 시간표가 업데이트되었습니다. 스케줄을 확인하고 신청하세요.", date: "2026.05.22", url: "application/sports/soccer.html" }
+      { title: "발리 유소년 여름 스포츠 프로모션 시작", titleEn: "BALLY JUNIOR Summer Sports Promotion", body: "축구·농구·배드민턴·필라테스·방송댄스 전 종목 여름 특별 프로모션을 진행합니다. 신규 등록 회원 대상 혜택을 확인하세요.", bodyEn: "A special summer promotion across every program — soccer, basketball, badminton, Pilates, and dance. See the benefits for newly enrolled members.", date: "2026.06.21", url: "application/promotion.html" },
+      { title: "키즈 필라테스 신규 클래스 오픈", titleEn: "New Kids Pilates Class Open", body: "성장기 바른 자세와 코어 근력을 위한 키즈 필라테스 클래스가 새롭게 열립니다. 전문 강사진과 함께 시작하세요.", bodyEn: "A new Kids Pilates class for healthy posture and core strength during the growth years. Start with our expert instructors.", date: "2026.06.14", url: "application/sports/pilates.html" },
+      { title: "키즈 방송댄스, 신규 안무 클래스 공개", titleEn: "New Kids K-Pop Dance Choreography Class", body: "최신 K-POP 안무로 구성된 키즈 방송댄스 새 클래스를 공개합니다. 리듬감과 표현력을 함께 키워요.", bodyEn: "A new Kids K-Pop dance class built on the latest choreography. Grow rhythm and expression together.", date: "2026.06.07", url: "application/sports/dance.html" },
+      { title: "농구 클래스 회원 모집 안내", titleEn: "Basketball Class Member Recruitment", body: "기본기부터 실전 경기 감각까지, 체계적인 커리큘럼의 농구 클래스 회원을 모집합니다.", bodyEn: "From fundamentals to real-game sense — now recruiting members for our structured basketball class.", date: "2026.05.30", url: "application/sports/basketball.html" },
+      { title: "축구 · 풋살 정규 클래스 일정 업데이트", titleEn: "Soccer · Futsal Class Schedule Update", body: "여름 시즌 축구·풋살 정규 클래스 시간표가 업데이트되었습니다. 스케줄을 확인하고 신청하세요.", bodyEn: "The summer soccer and futsal class timetable has been updated. Check the schedule and sign up.", date: "2026.05.22", url: "application/sports/soccer.html" }
     ];
 
     news.forEach(function (n) {
@@ -48,14 +49,15 @@
       a.href = n.url || "#";
       if (n.url) { a.target = "_blank"; a.rel = "noopener"; }
       a.innerHTML =
-        '<h3 class="bnews-card-title">' + n.title + "</h3>" +
-        '<p class="bnews-card-body">' + n.body + "</p>" +
+        '<h3 class="bnews-card-title" data-en="' + n.titleEn + '">' + n.title + "</h3>" +
+        '<p class="bnews-card-body" data-en="' + n.bodyEn + '">' + n.body + "</p>" +
         '<div class="bnews-card-foot">' +
         '<span class="bnews-card-go" aria-hidden="true">→</span>' +
         '<span class="bnews-card-date">' + n.date + "</span>" +
         "</div>";
       track.appendChild(a);
     });
+    if (window.BallyI18n) window.BallyI18n.apply();
 
     function stepWidth() {
       var card = track.querySelector(".bnews-card");
@@ -179,8 +181,13 @@
         titleEl.classList.add("news-fading");
         bodyEl.classList.add("news-fading");
         setTimeout(function () {
-          titleEl.textContent = it.title || "";
-          bodyEl.textContent = it.caption || "";
+          var en = window.BallyI18n && window.BallyI18n.get() === "en";
+          titleEl.setAttribute("data-ko", it.title || "");
+          titleEl.setAttribute("data-en", it.titleEn || it.title || "");
+          bodyEl.setAttribute("data-ko", it.caption || "");
+          bodyEl.setAttribute("data-en", it.captionEn || it.caption || "");
+          titleEl.textContent = en ? titleEl.getAttribute("data-en") : titleEl.getAttribute("data-ko");
+          bodyEl.textContent = en ? bodyEl.getAttribute("data-en") : bodyEl.getAttribute("data-ko");
           indexEl.textContent = pad(i + 1) + " / " + pad(items.length);
           titleEl.classList.remove("news-fading");
           bodyEl.classList.remove("news-fading");
@@ -251,11 +258,7 @@
     });
   });
 
-  // ----- Language toggle (label only) -----
-  var langBtn = document.getElementById("langBtn");
-  langBtn.addEventListener("click", function () {
-    langBtn.textContent = langBtn.textContent === "KR" ? "EN" : "KR";
-  });
+  // ----- Language toggle is handled by assets/i18n.js -----
 
   // ----- Suppress transition flicker while resizing -----
   var root = document.documentElement;
