@@ -5,7 +5,7 @@ backend:
   branch: main
   # 아래 base_url 은 GitHub 로그인을 처리하는 OAuth 프록시 주소입니다.
   # ADMIN_SETUP.md 의 안내대로 Cloudflare Worker 를 배포한 뒤 그 주소로 바꿔주세요.
-  base_url: https://REPLACE-WITH-YOUR-OAUTH-WORKER.workers.dev
+  base_url: https://bally-junior-cms-auth.soojinjung7.workers.dev
 
 # 업로드된 사진이 저장되는 repo 폴더
 media_folder: "assets/slides"
