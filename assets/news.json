@@ -1,25 +1,44 @@
 {
   "items": [
     {
-      "src": "assets/updates/clip-1.mp4",
-      "title": "발리 유소년 축구 홍보 영상",
-      "titleEn": "BALLY JUNIOR Soccer Promo Video",
-      "caption": "발리 유소년 축구 프로그램의 현장을 담은 홍보 영상입니다. 기본기부터 실전 감각까지, 아이들이 즐기면서 성장하는 훈련 과정을 소개합니다. 코치진의 체계적인 지도 아래 진행되는 세션의 분위기를 확인해보세요. 빠르게 만들고 대담하게 보여주는 BALLY JUNIOR의 기록입니다.",
-      "captionEn": "A promotional video from the BALLY JUNIOR soccer program. From fundamentals to real-game sense, it follows kids growing as they play. See the energy of sessions led by our coaching staff under a structured program."
+      "title": "발리 유소년 여름 스포츠 프로모션 시작",
+      "titleEn": "BALLY JUNIOR Summer Sports Promotion",
+      "body": "축구·농구·배드민턴·필라테스·방송댄스 전 종목 여름 특별 프로모션을 진행합니다. 신규 등록 회원 대상 혜택을 확인하세요.",
+      "bodyEn": "A special summer promotion across every program — soccer, basketball, badminton, Pilates, and dance. See the benefits for newly enrolled members.",
+      "date": "2026.06.21",
+      "url": "application/promotion.html"
     },
     {
-      "src": "assets/updates/clip-2.mp4",
-      "title": "발리 유소년 리듬 트레이닝 · 4층 TV",
-      "titleEn": "BALLY JUNIOR Rhythm Training · 4F TV",
-      "caption": "리듬감과 협응력을 키우는 발리 유소년 리듬 트레이닝 세션입니다. 음악에 맞춰 동작을 반복하며 운동 신경과 박자 감각을 동시에 단련합니다. 4층 스튜디오에서 진행된 이날 훈련의 활기찬 순간들을 영상으로 만나보세요. 작은 움직임 하나하나가 모여 큰 성장으로 이어집니다.",
-      "captionEn": "A BALLY JUNIOR rhythm-training session that builds rhythm and coordination. Moving to the music, kids train athleticism and a sense of beat at once. Watch the lively moments from this session in the 4F studio — small movements add up to big growth."
+      "title": "키즈 필라테스 신규 클래스 오픈",
+      "titleEn": "New Kids Pilates Class Open",
+      "body": "성장기 바른 자세와 코어 근력을 위한 키즈 필라테스 클래스가 새롭게 열립니다. 전문 강사진과 함께 시작하세요.",
+      "bodyEn": "A new Kids Pilates class for healthy posture and core strength during the growth years. Start with our expert instructors.",
+      "date": "2026.06.14",
+      "url": "application/sports/pilates.html"
     },
     {
-      "src": "assets/updates/clip-3.mp4",
-      "title": "리듬 트레이닝 4차 · 4층 홍보 영상",
-      "titleEn": "Rhythm Training Session 4 · 4F Promo Video",
-      "caption": "리듬 트레이닝 4차 세션의 하이라이트를 모은 홍보 영상입니다. 회차를 거듭할수록 한층 정교해진 아이들의 동작과 집중력을 확인할 수 있습니다. 4층 홍보용으로 제작된 이 영상은 프로그램의 성장 과정을 압축해 보여줍니다. 다음 세션에서 또 어떤 모습을 보여줄지 기대해주세요.",
-      "captionEn": "Highlights from the fourth rhythm-training session. Session after session, the kids' movements and focus grow sharper. Made for the 4F display, this video captures the program's progress — look forward to what the next session brings."
+      "title": "키즈 방송댄스, 신규 안무 클래스 공개",
+      "titleEn": "New Kids K-Pop Dance Choreography Class",
+      "body": "최신 K-POP 안무로 구성된 키즈 방송댄스 새 클래스를 공개합니다. 리듬감과 표현력을 함께 키워요.",
+      "bodyEn": "A new Kids K-Pop dance class built on the latest choreography. Grow rhythm and expression together.",
+      "date": "2026.06.07",
+      "url": "application/sports/dance.html"
+    },
+    {
+      "title": "농구 클래스 회원 모집 안내",
+      "titleEn": "Basketball Class Member Recruitment",
+      "body": "기본기부터 실전 경기 감각까지, 체계적인 커리큘럼의 농구 클래스 회원을 모집합니다.",
+      "bodyEn": "From fundamentals to real-game sense — now recruiting members for our structured basketball class.",
+      "date": "2026.05.30",
+      "url": "application/sports/basketball.html"
+    },
+    {
+      "title": "축구 · 풋살 정규 클래스 일정 업데이트",
+      "titleEn": "Soccer · Futsal Class Schedule Update",
+      "body": "여름 시즌 축구·풋살 정규 클래스 시간표가 업데이트되었습니다. 스케줄을 확인하고 신청하세요.",
+      "bodyEn": "The summer soccer and futsal class timetable has been updated. Check the schedule and sign up.",
+      "date": "2026.05.22",
+      "url": "application/sports/soccer.html"
     }
   ]
 }

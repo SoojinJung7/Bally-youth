@@ -1,15 +1,14 @@
-# ===== BALLY BALLY — Sveltia/Decap CMS config =====
+# ===== BALLY JUNIOR — Sveltia/Decap CMS config =====
 backend:
   name: github
   repo: SoojinJung7/bally-junior.com
   branch: main
   # 아래 base_url 은 GitHub 로그인을 처리하는 OAuth 프록시 주소입니다.
-  # ADMIN_SETUP.md 의 안내대로 Cloudflare Worker 를 배포한 뒤 그 주소로 바꿔주세요.
   base_url: https://bally-junior-cms-auth.soojinjung7.workers.dev
 
 # 업로드된 사진이 저장되는 repo 폴더
 media_folder: "assets/slides"
-# 사이트에서 사진을 불러올 때 쓰는 경로 (slides.json 에 기록되는 값)
+# 사이트에서 사진을 불러올 때 쓰는 경로
 public_folder: "assets/slides"
 
 # 에디터가 PC에서 미리 테스트할 수 있는 로컬 모드 허용
@@ -19,6 +18,9 @@ collections:
   - name: "site"
     label: "사이트"
     files:
+      # ========================================
+      # 1. 히어로 슬라이드 (메인 상단 사진 회전)
+      # ========================================
       - name: "slides"
         label: "히어로 슬라이드"
         file: "assets/slides.json"
@@ -47,3 +49,151 @@ collections:
                 label: "사진 설명 (대체 텍스트, 선택)"
                 widget: string
                 required: false
+
+      # ========================================
+      # 2. BALLY 스케치 (홈페이지 영상 섹션)
+      # ========================================
+      - name: "sketch"
+        label: "BALLY 스케치 (영상)"
+        file: "assets/sketch.json"
+        description: "메인 화면 BALLY SKETCH 섹션의 영상들. YouTube/Vimeo 링크 권장 (사이트가 빨라짐). 직접 업로드한 mp4 경로도 가능."
+        fields:
+          - name: items
+            label: "영상 목록"
+            label_singular: "영상"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - name: src
+                label: "영상 URL"
+                widget: string
+                hint: "YouTube/Vimeo URL 권장 (예: https://www.youtube.com/watch?v=XXXX). 또는 직접 업로드한 파일 경로 (예: assets/updates/clip-1.mp4)."
+              - { name: title, label: "제목 (한글)", widget: string }
+              - { name: titleEn, label: "제목 (영문)", widget: string }
+              - { name: caption, label: "설명 (한글)", widget: text }
+              - { name: captionEn, label: "설명 (영문)", widget: text }
+
+      # ========================================
+      # 3. BALLY 뉴스 카드 (메인 화면 우측 카루셀)
+      # ========================================
+      - name: "news"
+        label: "BALLY 뉴스 카드"
+        file: "assets/news.json"
+        description: "메인 화면 우측 BALLY NEWS 캐러셀에 표시되는 카드들. 카드 개수 자유."
+        fields:
+          - name: items
+            label: "뉴스 카드 목록"
+            label_singular: "카드"
+            widget: list
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - { name: title, label: "제목 (한글)", widget: string }
+              - { name: titleEn, label: "제목 (영문)", widget: string }
+              - { name: body, label: "본문 (한글)", widget: text }
+              - { name: bodyEn, label: "본문 (영문)", widget: text }
+              - name: date
+                label: "날짜"
+                widget: string
+                hint: "YYYY.MM.DD 형식 (예: 2026.06.21)"
+              - name: url
+                label: "링크 URL (선택)"
+                widget: string
+                required: false
+                hint: "카드 클릭 시 이동할 페이지. 사이트 내부면 상대 경로 (예: application/promotion.html)."
+
+      # ========================================
+      # 4. BALLY 스포츠 (종목 타일 6개)
+      # ========================================
+      - name: "works"
+        label: "BALLY 스포츠 (종목 타일)"
+        file: "assets/works.json"
+        description: "메인 화면 BALLY SPORTS 섹션의 종목 카드들. 종목 개수 자유."
+        fields:
+          - name: items
+            label: "종목 목록"
+            label_singular: "종목"
+            widget: list
+            summary: "{{fields.num}} — {{fields.name}}"
+            fields:
+              - { name: num, label: "번호 (예: 01)", widget: string }
+              - { name: cat, label: "카테고리 (영문, 상단 작은 글씨)", widget: string }
+              - { name: name, label: "이름 (한글)", widget: string }
+              - { name: en, label: "이름 (영문)", widget: string }
+              - name: url
+                label: "링크 URL (선택)"
+                widget: string
+                required: false
+                hint: "예: application/sports/soccer.html"
+              - name: gradFrom
+                label: "그라데이션 시작 색상"
+                widget: color
+                default: "#FF5F14"
+              - name: gradTo
+                label: "그라데이션 끝 색상"
+                widget: color
+                default: "#C90404"
+
+      # ========================================
+      # 5. 홈페이지 텍스트 (Hero 카피, 섹션 제목, Contact 등)
+      # ========================================
+      - name: "homepage"
+        label: "홈페이지 텍스트"
+        file: "assets/homepage.json"
+        description: "메인 화면의 텍스트들. 일부 필드는 HTML 태그 사용 가능 (예: <br>, <span class=\"accent\">)."
+        fields:
+          - name: hero
+            label: "히어로 (메인 상단)"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Eyebrow (한글, 작은 글씨)", widget: string }
+              - { name: eyebrowEn, label: "Eyebrow (영문)", widget: string }
+              - name: titleLines
+                label: "메인 타이틀 (한글)"
+                widget: list
+                hint: "각 항목이 한 줄. HTML 가능 (예: <span class=\"accent\">YOUNG</span>)"
+                field: { name: line, label: "줄", widget: string }
+              - name: titleLinesEn
+                label: "메인 타이틀 (영문)"
+                widget: list
+                field: { name: line, label: "줄", widget: string }
+              - { name: cta, label: "버튼 라벨 (한글)", widget: string }
+              - { name: ctaEn, label: "버튼 라벨 (영문)", widget: string }
+          - name: sketch
+            label: "BALLY 스케치 섹션 제목"
+            widget: object
+            fields:
+              - { name: title, label: "제목 (한글)", widget: string }
+              - { name: titleEn, label: "제목 (영문)", widget: string }
+          - name: sports
+            label: "BALLY 스포츠 섹션 제목·설명"
+            widget: object
+            fields:
+              - { name: title, label: "제목 (한글)", widget: string }
+              - { name: titleEn, label: "제목 (영문)", widget: string }
+              - { name: desc, label: "설명 (한글)", widget: string }
+              - { name: descEn, label: "설명 (영문)", widget: string }
+          - name: news
+            label: "BALLY 뉴스 섹션 제목"
+            widget: object
+            fields:
+              - { name: title, label: "제목 (한글)", widget: string }
+              - { name: titleEn, label: "제목 (영문)", widget: string }
+          - name: contact
+            label: "Contact 섹션 (하단 CTA)"
+            widget: object
+            fields:
+              - name: heading
+                label: "헤딩 (한글, HTML 가능)"
+                widget: text
+                hint: "줄바꿈은 <br />. 강조 단어는 <span class=\"accent\">강조</span>"
+              - { name: headingEn, label: "헤딩 (영문, HTML 가능)", widget: text }
+              - { name: cta, label: "버튼 라벨 (한글)", widget: string }
+              - { name: ctaEn, label: "버튼 라벨 (영문)", widget: string }
+          - name: footer
+            label: "Footer"
+            widget: object
+            fields:
+              - name: copyright
+                label: "Copyright 텍스트 (HTML 가능)"
+                widget: string
+                hint: "예: © <span id=\"year\">2026</span> BALLY YOUTH SPORTSCLUB - Electree Co.Ltd."

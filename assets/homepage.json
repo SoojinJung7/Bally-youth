@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "eyebrow": "Bundang No.1 Junior Sportsclub",
+    "eyebrowEn": "Bundang No.1 Junior Sportsclub",
+    "titleLines": [
+      "PLAYGROUND",
+      "FOR <span class=\"accent\">YOUNG</span>",
+      "HEROS<span class=\"dot-orange\">.</span>"
+    ],
+    "titleLinesEn": [
+      "PLAYGROUND",
+      "FOR <span class=\"accent\">YOUNG</span>",
+      "HEROS<span class=\"dot-orange\">.</span>"
+    ],
+    "cta": "스케줄/빠른상담",
+    "ctaEn": "Schedule / Quick Inquiry"
+  },
+  "sketch": {
+    "title": "BALLY SKETCH",
+    "titleEn": "BALLY SKETCH"
+  },
+  "sports": {
+    "title": "BALLY SPORTS",
+    "titleEn": "BALLY SPORTS",
+    "desc": "발리 유소년과 함께하는 스포츠!",
+    "descEn": "Sports with BALLY JUNIOR!"
+  },
+  "news": {
+    "title": "BALLY NEWS",
+    "titleEn": "BALLY NEWS"
+  },
+  "contact": {
+    "heading": "LET'S<br />BUILD<br /><span class=\"accent\">SOMETHING.</span>",
+    "headingEn": "LET'S<br />BUILD<br /><span class=\"accent\">SOMETHING.</span>",
+    "cta": "스케줄/빠른상담",
+    "ctaEn": "Schedule / Quick Inquiry"
+  },
+  "footer": {
+    "copyright": "© <span id=\"year\">2026</span> BALLY YOUTH SPORTSCLUB - Electree Co.Ltd."
+  }
+}
