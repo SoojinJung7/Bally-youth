@@ -1,0 +1,5 @@
+# Heavy browser deps — never commit (Chromium ~150MB, downloaded on setup)
+.cache/
+node_modules/
+package.json
+package-lock.json
