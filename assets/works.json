@@ -25,20 +25,20 @@
       "cat": "Badminton / Pickleball",
       "name": "배드민턴 / 피클볼",
       "en": "Badminton / Pickleball",
-      "img": "assets/sports/badminton.jpg",
+      "img": "/assets/sports/배드민턴.jpg",
       "url": "application/sports/badminton.html",
-      "gradFrom": "#FF5F14",
-      "gradTo": "#1A1919"
+      "gradFrom": "#ffffff",
+      "gradTo": "#303030"
     },
     {
       "num": "04",
       "cat": "Inline / Fitness",
       "name": "인라인 / 생활체육",
       "en": "Inline / Fitness",
-      "img": "assets/sports/inline.jpg",
+      "img": "/assets/sports/인라인-2.jpg",
       "url": "application/sports/inline.html",
-      "gradFrom": "#1A1919",
-      "gradTo": "#FF5F14"
+      "gradFrom": "#ffffff",
+      "gradTo": "#4f4f4f"
     },
     {
       "num": "05",
