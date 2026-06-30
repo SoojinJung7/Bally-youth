@@ -1,0 +1,33 @@
+# robots.txt — bally-junior.com
+# 모든 검색엔진 + 생성형 AI 엔진에 사이트 수집을 허용합니다.
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# --- 생성형 AI 크롤러 (GEO: AI 검색·추천 노출용) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://bally-junior.com/sitemap.xml
