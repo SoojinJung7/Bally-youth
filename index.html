@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-  <link rel="stylesheet" href="styles.css?v=20260626f" />
+  <link rel="stylesheet" href="styles.css?v=20260701a" />
   <link rel="icon" href="assets/favicon.ico?v=2" sizes="any" />
   <link rel="apple-touch-icon" href="assets/icon-192.png" />
   <!-- Structured data (JSON-LD) — SEO rich results + GEO/AI engines -->
@@ -122,6 +122,40 @@
             "url": "https://bally-junior.com/application/sports/dance.html"
           }
         }
+      ],
+      "telephone": [
+        "+82-31-728-7779",
+        "+82-31-728-7778"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "내정로 58 스포츠클럽 필립",
+        "addressLocality": "성남시 분당구",
+        "addressRegion": "경기도",
+        "addressCountry": "KR"
+      },
+      "department": [
+        {
+          "@type": "SportsActivityLocation",
+          "@id": "https://bally-junior.com/#gumi",
+          "name": "발리유소년 스포츠클럽 구미점 일렉트리",
+          "description": "정규 규격 농구 코트를 갖춘 농구 전문 지점. 주로 농구 클래스를 진행합니다.",
+          "url": "https://bally-junior.com/application/sports/basketball.html",
+          "telephone": [
+            "+82-31-728-7779",
+            "+82-31-728-7778"
+          ],
+          "parentOrganization": {
+            "@id": "https://bally-junior.com/#organization"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "대지로15번길 88-1 A동",
+            "addressLocality": "성남시 분당구",
+            "addressRegion": "경기도",
+            "addressCountry": "KR"
+          }
+        }
       ]
     },
     {
@@ -164,7 +198,7 @@
       "name": "발리 유소년 스포츠클럽은 어디에 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "경기도 성남시 분당구 일대를 중심으로 운영하는 분당 지역 유소년 스포츠클럽입니다. 종목별 운영 장소와 일정은 빠른상담으로 확인하실 수 있습니다."
+        "text": "경기도 성남시 분당구에 두 곳을 운영합니다. ① 본점: 성남시 분당구 내정로 58 ‘스포츠클럽 필립’ 건물로 G층·4층·옥상 전 층이 유소년 전용 클래스룸입니다. ② 구미점 일렉트리: 성남시 분당구 대지로15번길 88-1 A동으로 정규 규격 농구 코트를 갖춰 주로 농구 클래스를 진행합니다."
       }
     },
     {
@@ -172,7 +206,7 @@
       "name": "수업 신청이나 문의는 어떻게 하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "홈페이지의 ‘스케줄/빠른상담’ 메뉴(https://bally-junior.com/application/)에서 스케줄 확인과 상담 신청이 가능하며, 인스타그램 @bally_junior_sports_club 으로도 문의할 수 있습니다."
+        "text": "전화 031-728-7779 또는 031-728-7778 로 상담할 수 있고, 홈페이지의 ‘스케줄/빠른상담’ 메뉴(https://bally-junior.com/application/)에서 스케줄 확인과 상담 신청이 가능합니다. 인스타그램 @bally_junior_sports_club 으로도 문의할 수 있습니다."
       }
     },
     {
@@ -304,6 +338,21 @@
           <img src="assets/logo-bally-white.png" alt="BALLY JUNIOR SPORTS CLUB" class="brand-logo" />
         </a>
         <p class="footer-copy">© <span id="year">2026</span> BALLY YOUTH SPORTSCLUB - Electree Co.Ltd.</p>
+      </div>
+      <div class="footer-contact">
+        <div class="footer-loc">
+          <span class="footer-loc-label" data-en="Main Branch">본점</span>
+          <address data-en="58 Naejeong-ro, Bundang-gu, Seongnam-si, Gyeonggi-do (‘Sports Club Philip’ — youth-only classrooms on G/4F/rooftop)">경기도 성남시 분당구 내정로 58 ‘스포츠클럽 필립’ (G층·4층·옥상 유소년 전용 클래스룸)</address>
+        </div>
+        <div class="footer-loc">
+          <span class="footer-loc-label" data-en="Gumi Branch · Basketball">구미점 일렉트리 · 농구</span>
+          <address data-en="88-1 Daeji-ro 15beon-gil, Bundang-gu, Seongnam-si (regulation basketball court)">경기도 성남시 분당구 대지로15번길 88-1 A동 (정규 규격 농구 코트)</address>
+        </div>
+        <p class="footer-tel">
+          <a href="tel:+82317287779">031-728-7779</a>
+          <span aria-hidden="true">·</span>
+          <a href="tel:+82317287778">031-728-7778</a>
+        </p>
       </div>
     </div>
   </footer>
