@@ -45,20 +45,20 @@
       "cat": "Pilates",
       "name": "키즈 필라테스",
       "en": "Kids Pilates",
-      "img": "assets/sports/pilates.jpg",
+      "img": "/assets/sports/키즈 필라테스.jpg",
       "url": "application/sports/pilates.html",
-      "gradFrom": "#C90404",
-      "gradTo": "#FF5F14"
+      "gradFrom": "#ffffff",
+      "gradTo": "#303030"
     },
     {
       "num": "06",
       "cat": "Dance",
       "name": "키즈 방송댄스",
       "en": "Kids K-Pop Dance",
-      "img": "assets/sports/dance.jpg",
+      "img": "/assets/sports/발리유소년 방송댄스.jpg",
       "url": "application/sports/dance.html",
-      "gradFrom": "#1A1919",
-      "gradTo": "#C90404"
+      "gradFrom": "#ffffff",
+      "gradTo": "#363636"
     }
   ]
 }
