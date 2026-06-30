@@ -15,10 +15,10 @@
       "cat": "Basketball",
       "name": "농구",
       "en": "Basketball",
-      "img": "assets/sports/basketball.jpg",
+      "img": "/assets/sports/KakaoTalk_20260522_100851696_13.jpg",
       "url": "application/sports/basketball.html",
-      "gradFrom": "#C90404",
-      "gradTo": "#1A1919"
+      "gradFrom": "#ffffff",
+      "gradTo": "#2e2e2e"
     },
     {
       "num": "03",
