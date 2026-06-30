@@ -5,8 +5,8 @@
       "cat": "Soccer / Futsal",
       "name": "축구 / 풋살",
       "en": "Soccer / Futsal",
+      "img": "/assets/sports/크리유소년 구미동 풋살파크-26.jpg",
       "url": "application/sports/soccer.html",
-      "img": "assets/sports/soccer.jpg",
       "gradFrom": "#FF5F14",
       "gradTo": "#C90404"
     },
@@ -15,8 +15,8 @@
       "cat": "Basketball",
       "name": "농구",
       "en": "Basketball",
-      "url": "application/sports/basketball.html",
       "img": "assets/sports/basketball.jpg",
+      "url": "application/sports/basketball.html",
       "gradFrom": "#C90404",
       "gradTo": "#1A1919"
     },
@@ -25,8 +25,8 @@
       "cat": "Badminton / Pickleball",
       "name": "배드민턴 / 피클볼",
       "en": "Badminton / Pickleball",
-      "url": "application/sports/badminton.html",
       "img": "assets/sports/badminton.jpg",
+      "url": "application/sports/badminton.html",
       "gradFrom": "#FF5F14",
       "gradTo": "#1A1919"
     },
@@ -35,8 +35,8 @@
       "cat": "Inline / Fitness",
       "name": "인라인 / 생활체육",
       "en": "Inline / Fitness",
-      "url": "application/sports/inline.html",
       "img": "assets/sports/inline.jpg",
+      "url": "application/sports/inline.html",
       "gradFrom": "#1A1919",
       "gradTo": "#FF5F14"
     },
@@ -45,8 +45,8 @@
       "cat": "Pilates",
       "name": "키즈 필라테스",
       "en": "Kids Pilates",
-      "url": "application/sports/pilates.html",
       "img": "assets/sports/pilates.jpg",
+      "url": "application/sports/pilates.html",
       "gradFrom": "#C90404",
       "gradTo": "#FF5F14"
     },
@@ -55,8 +55,8 @@
       "cat": "Dance",
       "name": "키즈 방송댄스",
       "en": "Kids K-Pop Dance",
-      "url": "application/sports/dance.html",
       "img": "assets/sports/dance.jpg",
+      "url": "application/sports/dance.html",
       "gradFrom": "#1A1919",
       "gradTo": "#C90404"
     }
