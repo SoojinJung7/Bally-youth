@@ -119,6 +119,14 @@ collections:
               - { name: cat, label: "카테고리 (영문, 상단 작은 글씨)", widget: string }
               - { name: name, label: "이름 (한글)", widget: string }
               - { name: en, label: "이름 (영문)", widget: string }
+              - name: img
+                label: "배경 사진 (선택)"
+                widget: image
+                required: false
+                choose_url: false
+                media_folder: "/assets/sports"
+                public_folder: "/assets/sports"
+                hint: "비우면 그라데이션만 표시됩니다. 사진을 넣으면 그 위에 브랜드 그라데이션 색이 자동으로 입혀집니다."
               - name: url
                 label: "링크 URL (선택)"
                 widget: string

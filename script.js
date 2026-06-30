@@ -81,7 +81,15 @@
         if (w.url) { a.target = "_blank"; a.rel = "noopener"; }
         var grad = w.grad || ("linear-gradient(135deg," + (w.gradFrom || "#FF5F14") + "," + (w.gradTo || "#C90404") + ")");
         a.style.setProperty("--grad", grad);
+        var imgHtml = "";
+        if (w.img) {
+          a.classList.add("has-img");
+          imgHtml =
+            '<img class="work-img" src="' + w.img + '" alt="" loading="lazy" ' +
+            "onerror=\"this.closest('.work').classList.remove('has-img');this.remove();\">";
+        }
         a.innerHTML =
+          imgHtml +
           '<span class="work-num">' + (w.num || "") + "</span>" +
           '<div class="work-info">' +
           '<div class="work-cat">' + (w.cat || "") + "</div>" +
