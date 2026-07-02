@@ -1,0 +1,129 @@
+{
+  "page": {
+    "eyebrow": "BALLY JUNIOR PLAYERS",
+    "title": "발리 주니어 플레이어를<br />소개합니다!",
+    "titleEn": "Meet the<br />BALLY JUNIOR Players!",
+    "desc": "매달 성장하는 우리 아이들. 축구 실력만이 아니라 수업 태도·예의범절·리더십·교우관계까지, 발리 주니어가 함께 키워갑니다.",
+    "descEn": "Our kids grow every month — not just on the pitch, but in attitude, manners, leadership and teamwork. We grow them together."
+  },
+  "featuredLabel": "이달의 플레이어",
+  "featuredLabelEn": "Players of the Month",
+  "allLabel": "전체 플레이어",
+  "allLabelEn": "All Players",
+  "players": [
+    {
+      "name": "김하준",
+      "nameEn": "Kim Ha-jun",
+      "position": "FW",
+      "sport": "축구",
+      "sportEn": "Soccer",
+      "flag": "KR",
+      "photo": "",
+      "featured": true,
+      "tier": "signature",
+      "stats": [
+        { "label": "실력", "labelEn": "SKL", "value": 92 },
+        { "label": "태도", "labelEn": "ATT", "value": 90 },
+        { "label": "예절", "labelEn": "MAN", "value": 95 },
+        { "label": "리더", "labelEn": "LDR", "value": 88 },
+        { "label": "협동", "labelEn": "TMW", "value": 93 },
+        { "label": "열정", "labelEn": "PAS", "value": 96 }
+      ]
+    },
+    {
+      "name": "이서윤",
+      "nameEn": "Lee Seo-yun",
+      "position": "MF",
+      "sport": "축구",
+      "sportEn": "Soccer",
+      "flag": "KR",
+      "photo": "",
+      "featured": true,
+      "tier": "gold",
+      "stats": [
+        { "label": "실력", "labelEn": "SKL", "value": 88 },
+        { "label": "태도", "labelEn": "ATT", "value": 94 },
+        { "label": "예절", "labelEn": "MAN", "value": 92 },
+        { "label": "리더", "labelEn": "LDR", "value": 91 },
+        { "label": "협동", "labelEn": "TMW", "value": 90 },
+        { "label": "열정", "labelEn": "PAS", "value": 89 }
+      ]
+    },
+    {
+      "name": "박도윤",
+      "nameEn": "Park Do-yun",
+      "position": "GK",
+      "sport": "축구",
+      "sportEn": "Soccer",
+      "flag": "KR",
+      "photo": "",
+      "featured": true,
+      "tier": "gold",
+      "stats": [
+        { "label": "실력", "labelEn": "SKL", "value": 85 },
+        { "label": "태도", "labelEn": "ATT", "value": 96 },
+        { "label": "예절", "labelEn": "MAN", "value": 94 },
+        { "label": "리더", "labelEn": "LDR", "value": 82 },
+        { "label": "협동", "labelEn": "TMW", "value": 88 },
+        { "label": "열정", "labelEn": "PAS", "value": 91 }
+      ]
+    },
+    {
+      "name": "최지우",
+      "nameEn": "Choi Ji-woo",
+      "position": "GD",
+      "sport": "농구",
+      "sportEn": "Basketball",
+      "flag": "KR",
+      "photo": "",
+      "featured": false,
+      "tier": "gold",
+      "stats": [
+        { "label": "실력", "labelEn": "SKL", "value": 87 },
+        { "label": "태도", "labelEn": "ATT", "value": 89 },
+        { "label": "예절", "labelEn": "MAN", "value": 90 },
+        { "label": "리더", "labelEn": "LDR", "value": 86 },
+        { "label": "협동", "labelEn": "TMW", "value": 92 },
+        { "label": "열정", "labelEn": "PAS", "value": 88 }
+      ]
+    },
+    {
+      "name": "정예린",
+      "nameEn": "Jung Ye-rin",
+      "position": "WG",
+      "sport": "방송댄스",
+      "sportEn": "Dance",
+      "flag": "KR",
+      "photo": "",
+      "featured": false,
+      "tier": "gold",
+      "stats": [
+        { "label": "실력", "labelEn": "SKL", "value": 90 },
+        { "label": "태도", "labelEn": "ATT", "value": 92 },
+        { "label": "예절", "labelEn": "MAN", "value": 93 },
+        { "label": "리더", "labelEn": "LDR", "value": 84 },
+        { "label": "협동", "labelEn": "TMW", "value": 91 },
+        { "label": "열정", "labelEn": "PAS", "value": 95 }
+      ]
+    },
+    {
+      "name": "강시우",
+      "nameEn": "Kang Si-woo",
+      "position": "DF",
+      "sport": "축구",
+      "sportEn": "Soccer",
+      "flag": "KR",
+      "photo": "",
+      "featured": false,
+      "tier": "gold",
+      "stats": [
+        { "label": "실력", "labelEn": "SKL", "value": 84 },
+        { "label": "태도", "labelEn": "ATT", "value": 88 },
+        { "label": "예절", "labelEn": "MAN", "value": 89 },
+        { "label": "리더", "labelEn": "LDR", "value": 90 },
+        { "label": "협동", "labelEn": "TMW", "value": 87 },
+        { "label": "열정", "labelEn": "PAS", "value": 86 }
+      ]
+    }
+  ]
+}

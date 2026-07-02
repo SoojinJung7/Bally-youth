@@ -205,3 +205,85 @@ collections:
                 label: "Copyright 텍스트 (HTML 가능)"
                 widget: string
                 hint: "예: © <span id=\"year\">2026</span> BALLY YOUTH SPORTSCLUB - Electree Co.Ltd."
+
+      # ========================================
+      # 6. 플레이어 카드 (/players 페이지)
+      # ========================================
+      - name: "players"
+        label: "플레이어 카드"
+        file: "assets/players.json"
+        description: "/players 페이지의 발리 유소년 선수 카드들. 카드마다 사진·포지션·스탯을 자유롭게 편집하세요. 등급(OVR)은 스탯 6개의 평균으로 자동 계산됩니다."
+        fields:
+          - name: page
+            label: "페이지 상단 (제목·소개)"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "작은 라벨 (영문)", widget: string }
+              - { name: title, label: "제목 (한글, HTML 가능 — <br>로 줄바꿈)", widget: string }
+              - { name: titleEn, label: "제목 (영문)", widget: string }
+              - { name: desc, label: "소개 문구 (한글)", widget: text }
+              - { name: descEn, label: "소개 문구 (영문)", widget: text }
+          - { name: featuredLabel, label: "상단 섹션 제목 (한글)", widget: string, default: "이달의 플레이어" }
+          - { name: featuredLabelEn, label: "상단 섹션 제목 (영문)", widget: string, default: "Players of the Month" }
+          - { name: allLabel, label: "전체 섹션 제목 (한글)", widget: string, default: "전체 플레이어" }
+          - { name: allLabelEn, label: "전체 섹션 제목 (영문)", widget: string, default: "All Players" }
+          - name: players
+            label: "선수 목록"
+            label_singular: "선수"
+            widget: list
+            summary: "{{fields.name}} · {{fields.position}}"
+            fields:
+              - { name: name, label: "이름 (한글)", widget: string }
+              - { name: nameEn, label: "이름 (영문/로마자)", widget: string }
+              - name: position
+                label: "포지션 (짧게, 예: FW · MF · GK)"
+                widget: string
+                hint: "카드 왼쪽에 표시되는 포지션 약자."
+              - { name: sport, label: "종목 (한글, 예: 축구)", widget: string }
+              - { name: sportEn, label: "종목 (영문, 예: Soccer)", widget: string }
+              - name: photo
+                label: "사진 (선택)"
+                widget: image
+                required: false
+                choose_url: false
+                media_folder: "/assets/players"
+                public_folder: "/assets/players"
+                hint: "비우면 이름 첫 글자가 표시됩니다."
+              - name: flag
+                label: "국기"
+                widget: string
+                default: "KR"
+                hint: "KR = 태극기 (기본값). 다른 나라는 국기 이모지를 입력 (예: 🇺🇸)."
+              - name: featured
+                label: "이달의 플레이어로 상단 노출"
+                widget: boolean
+                default: false
+              - name: tier
+                label: "카드 등급 (색상)"
+                widget: select
+                default: "gold"
+                options:
+                  - { label: "골드 (기본)", value: "gold" }
+                  - { label: "시그니처 (특별 · 오렌지)", value: "signature" }
+              - name: rating
+                label: "등급 OVR (선택 — 비우면 스탯 평균 자동계산)"
+                widget: number
+                required: false
+                value_type: int
+                min: 1
+                max: 99
+              - name: stats
+                label: "평가 스탯 (6개 권장)"
+                label_singular: "스탯"
+                widget: list
+                summary: "{{fields.label}} · {{fields.value}}"
+                hint: "예: 실력 / 태도 / 예절 / 리더 / 협동 / 열정"
+                fields:
+                  - { name: label, label: "항목 (한글, 짧게)", widget: string }
+                  - { name: labelEn, label: "항목 (영문, 짧게 — 예: SKL)", widget: string }
+                  - name: value
+                    label: "점수 (1–99)"
+                    widget: number
+                    value_type: int
+                    min: 1
+                    max: 99

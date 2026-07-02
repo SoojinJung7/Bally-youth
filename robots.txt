@@ -4,6 +4,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /players/   # 작업 중 — 완성 후 공개 예정
 
 # --- 생성형 AI 크롤러 (GEO: AI 검색·추천 노출용) ---
 User-agent: GPTBot

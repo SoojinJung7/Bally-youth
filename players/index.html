@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BALLY JUNIOR 플레이어 | 발리 유소년 선수 카드</title>
+  <meta name="description" content="발리 유소년 플레이어를 소개합니다. 축구 실력만이 아니라 수업 태도·예의범절·리더십·교우관계까지, 매달 성장하는 우리 아이들의 선수 카드." />
+  <!-- 작업 중 페이지 — 완성 전까지 검색엔진 비노출 (nav 링크·sitemap에서도 제외) -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1A1919" />
+  <link rel="canonical" href="https://bally-junior.com/players/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BALLY JUNIOR" />
+  <meta property="og:title" content="BALLY JUNIOR 플레이어 — 발리 유소년 선수 카드" />
+  <meta property="og:description" content="매달 성장하는 우리 아이들. 발리 유소년만의 선수 카드로 만나보세요." />
+  <meta property="og:url" content="https://bally-junior.com/players/" />
+  <meta property="og:image" content="https://bally-junior.com/assets/slides/slide-1.jpg" />
+  <meta property="og:locale" content="ko_KR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="/styles.css?v=20260701a" />
+  <link rel="icon" href="/assets/favicon.ico?v=2" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/icon-192.png" />
+
+  <style>
+    /* ===== BALLY JUNIOR — Player cards (original design, FUT-inspired layout) ===== */
+    .players-page { padding-top: 72px; }
+
+    /* --- Hero --- */
+    .players-hero {
+      position: relative;
+      padding: 48px 0 40px;
+      overflow: hidden;
+    }
+    .players-hero::before {
+      content: "";
+      position: absolute;
+      top: -30%; left: 50%;
+      width: 900px; height: 900px;
+      transform: translateX(-50%);
+      background: radial-gradient(closest-side, rgba(255, 95, 20, 0.20), rgba(201, 4, 4, 0.08) 45%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .players-hero .container { position: relative; z-index: 1; }
+    .players-eyebrow {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--orange); margin-bottom: 18px;
+    }
+    .players-title {
+      font-family: "Anton", sans-serif; font-weight: 400;
+      font-size: clamp(40px, 8vw, 104px); line-height: 0.94;
+      letter-spacing: -0.01em; text-transform: uppercase;
+    }
+    .players-title .accent { color: var(--orange); }
+    .players-desc {
+      margin-top: 24px; max-width: 620px;
+      color: var(--muted); font-size: clamp(14px, 1.5vw, 17px);
+    }
+
+    /* --- Section rhythm --- */
+    .players-section { padding: 40px 0 72px; }
+    .players-band {
+      font-family: "Anton", sans-serif; text-transform: uppercase;
+      font-size: clamp(26px, 4vw, 46px); letter-spacing: 0.02em;
+      margin-bottom: 32px; display: flex; align-items: center; gap: 16px;
+    }
+    .players-band::after {
+      content: ""; flex: 1; height: 2px;
+      background: linear-gradient(90deg, var(--orange), transparent);
+    }
+
+    /* --- Layout grids --- */
+    .players-featured {
+      display: flex; flex-wrap: wrap; gap: 28px; justify-content: center;
+    }
+    .players-grid {
+      display: grid; gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+    }
+
+    /* ============ THE CARD ============ */
+    .pcard {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 5 / 7;
+      border-radius: 20px;
+      padding: 2px; /* room for gradient frame */
+      background: linear-gradient(150deg, #e9b949, #b6801f 35%, #7a5310 70%, #e9b949);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .pcard:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+    }
+    .pcard--signature {
+      background: linear-gradient(150deg, #ff8a3d, #ff5f14 30%, #c90404 65%, #ff8a3d);
+    }
+    .pcard__inner {
+      position: relative;
+      height: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(120% 80% at 50% -10%, rgba(255, 95, 20, 0.20), transparent 55%),
+        linear-gradient(165deg, #2a2422, #17110f 70%);
+      display: flex; flex-direction: column;
+      padding: 16px 16px 14px;
+    }
+    .pcard--signature .pcard__inner {
+      background:
+        radial-gradient(120% 80% at 50% -10%, rgba(201, 4, 4, 0.30), transparent 55%),
+        linear-gradient(165deg, #2e1a16, #150c0a 70%);
+    }
+
+    /* Top: meta column + photo */
+    .pcard__top { display: flex; gap: 10px; flex: 1; min-height: 0; }
+    .pcard__meta {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 7px; padding-right: 10px; padding-top: 4px;
+      border-right: 1px solid rgba(233, 185, 73, 0.28);
+      width: 56px; flex: none;
+    }
+    .pcard--signature .pcard__meta { border-right-color: rgba(255, 138, 61, 0.35); }
+    .pcard__ovr {
+      font-family: "Anton", sans-serif; font-size: 40px; line-height: 0.8;
+      color: #f4d47a; text-shadow: 0 2px 10px rgba(255, 95, 20, 0.35);
+    }
+    .pcard--signature .pcard__ovr { color: #ffd9b0; }
+    .pcard__pos {
+      font-weight: 800; font-size: 13px; letter-spacing: 0.06em;
+      color: var(--white); text-transform: uppercase;
+    }
+    .pcard__flag {
+      width: 30px; height: 20px; border-radius: 3px; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); display: block;
+    }
+    .pcard__flag svg { width: 100%; height: 100%; display: block; }
+    .pcard__badge { width: 30px; height: auto; opacity: 0.92; margin-top: 2px; }
+
+    .pcard__photo {
+      position: relative; flex: 1; min-width: 0;
+      border-radius: 10px; overflow: hidden;
+      display: flex; align-items: flex-end; justify-content: center;
+      background: linear-gradient(160deg, #3a302b, #1c1512);
+    }
+    .pcard__photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    }
+    .pcard__ph {
+      font-family: "Anton", sans-serif; font-size: 84px; line-height: 1;
+      color: rgba(255, 255, 255, 0.10); padding-bottom: 6px;
+      display: flex; align-items: center; justify-content: center; height: 100%;
+    }
+    .pcard__watermark {
+      position: absolute; inset: 0; opacity: 0.05;
+      background: url("/assets/logo-bally-white.png") center/72% no-repeat;
+      pointer-events: none;
+    }
+
+    /* Name + sport */
+    .pcard__name {
+      font-family: "Anton", sans-serif; text-transform: uppercase;
+      text-align: center; font-size: 24px; letter-spacing: 0.02em;
+      margin-top: 12px; color: var(--white);
+      text-shadow: 0 2px 12px rgba(255, 95, 20, 0.25);
+    }
+    .pcard__sport {
+      text-align: center; font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: #e9b949; margin-top: 2px; font-weight: 700;
+    }
+    .pcard--signature .pcard__sport { color: #ff8a3d; }
+    .pcard__divider {
+      height: 1px; margin: 10px 6px 8px;
+      background: linear-gradient(90deg, transparent, rgba(233, 185, 73, 0.55), transparent);
+    }
+    .pcard--signature .pcard__divider {
+      background: linear-gradient(90deg, transparent, rgba(255, 138, 61, 0.6), transparent);
+    }
+
+    /* Stats 3x2 */
+    .pcard__stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      column-gap: 14px; row-gap: 6px; padding: 0 6px;
+    }
+    .pcard__stats .pstat:nth-child(even) {
+      padding-left: 14px;
+      border-left: 1px solid rgba(233, 185, 73, 0.28);
+    }
+    .pcard--signature .pcard__stats .pstat:nth-child(even) {
+      border-left-color: rgba(255, 138, 61, 0.35);
+    }
+    .pstat { display: flex; align-items: baseline; gap: 7px; white-space: nowrap; }
+    .pstat b {
+      font-family: "Archivo", sans-serif; font-weight: 800; font-size: 15px;
+      color: #f4d47a; min-width: 22px;
+    }
+    .pcard--signature .pstat b { color: #ffd9b0; }
+    .pstat span {
+      font-size: 11px; letter-spacing: 0.04em; color: #cfc7c0;
+      text-transform: uppercase; font-weight: 600;
+    }
+
+    /* Featured (large) cards */
+    .pcard--lg { max-width: 300px; }
+    .pcard--lg .pcard__ovr { font-size: 46px; }
+    .pcard--lg .pcard__name { font-size: 30px; }
+    .pcard--lg .pcard__meta { width: 62px; }
+    .pcard--lg .pstat b { font-size: 16px; }
+
+    /* Ribbon for signature */
+    .pcard__ribbon {
+      position: absolute; top: 12px; right: -34px;
+      transform: rotate(45deg);
+      background: linear-gradient(90deg, var(--orange), var(--red));
+      color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 0.14em;
+      padding: 4px 40px; text-transform: uppercase; z-index: 3;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* CTA back home */
+    .players-cta { text-align: center; padding: 8px 0 96px; }
+
+    @media (max-width: 560px) {
+      .players-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .pcard__ovr { font-size: 34px; }
+      .pcard__name { font-size: 20px; }
+      .pcard__meta { width: 48px; }
+      .pstat b { font-size: 14px; }
+      .pstat span { font-size: 10px; }
+    }
+  </style>
+</head>
+
+<body class="players-page">
+  <!-- ===== Header (shared) ===== -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="BALLY JUNIOR home">
+        <img src="/assets/logo-bally-white.png" alt="BALLY JUNIOR SPORTS CLUB" class="brand-logo" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/#updates">Sketch</a>
+        <a href="/#about">News</a>
+        <a class="nav-static" aria-current="page" data-en="Players">플레이어</a>
+        <a href="/application/" class="nav-cta" data-en="BALLY JUNIOR →">발리 유소년 →</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang" id="langBtn" type="button">KR</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="players-hero">
+    <div class="container">
+      <p class="players-eyebrow" id="pEyebrow">BALLY JUNIOR PLAYERS</p>
+      <h1 class="players-title" id="pTitle" data-en="">발리 주니어 플레이어를<br />소개합니다!</h1>
+      <p class="players-desc" id="pDesc" data-en="">불러오는 중…</p>
+    </div>
+  </section>
+
+  <!-- ===== Featured ===== -->
+  <section class="players-section" id="featuredSection" hidden>
+    <div class="container">
+      <h2 class="players-band" id="featuredBand" data-en="">이달의 플레이어</h2>
+      <div class="players-featured" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== All players ===== -->
+  <section class="players-section">
+    <div class="container">
+      <h2 class="players-band" id="allBand" data-en="">전체 플레이어</h2>
+      <div class="players-grid" id="playersGrid"></div>
+    </div>
+  </section>
+
+  <div class="players-cta">
+    <a href="/application/" class="btn btn-primary btn-lg" data-en="Schedule / Quick Inquiry">스케줄/빠른상담</a>
+  </div>
+
+  <!-- ===== Footer (shared) ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a href="/" class="brand brand-footer">
+          <img src="/assets/logo-bally-white.png" alt="BALLY JUNIOR SPORTS CLUB" class="brand-logo" />
+        </a>
+        <p class="footer-copy">© <span id="year">2026</span> BALLY YOUTH SPORTSCLUB - Electree Co.Ltd.</p>
+      </div>
+      <div class="footer-contact">
+        <div class="footer-loc">
+          <span class="footer-loc-label" data-en="Main Branch">본점</span>
+          <address data-en="58 Naejeong-ro, Bundang-gu, Seongnam-si, Gyeonggi-do (‘Sports Club Philip’ — youth-only classrooms on G/4F/rooftop)">경기도 성남시 분당구 내정로 58 ‘스포츠클럽 필립’ (G층·4층·옥상 유소년 전용 클래스룸)</address>
+        </div>
+        <div class="footer-loc">
+          <span class="footer-loc-label" data-en="Gumi Branch · Basketball">구미점 일렉트리 · 농구</span>
+          <address data-en="88-1 Daeji-ro 15beon-gil, Suji-gu, Yongin-si, Gyeonggi-do (regulation basketball court)">경기도 용인시 수지구 대지로15번길 88-1 A동 (정규 규격 농구 코트)</address>
+        </div>
+        <p class="footer-tel">
+          <a href="tel:+82317287779">031-728-7779</a>
+          <span aria-hidden="true">·</span>
+          <a href="tel:+82317287778">031-728-7778</a>
+        </p>
+        <p class="footer-hours" data-en="Hours · Weekdays 10:00–23:00">운영시간 · 평일 10:00–23:00</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/i18n.js?v=20260626d"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      /* ---- Taegeukgi (Korean flag) as inline SVG — required brand element ---- */
+      function trigram(cx, cy, pattern) {
+        // pattern: array of 3 booleans, true = solid bar, false = broken bar
+        var ys = [cy - 2.4, cy, cy + 2.4], out = "";
+        for (var i = 0; i < 3; i++) {
+          if (pattern[i]) {
+            out += '<rect x="' + (cx - 4) + '" y="' + (ys[i] - 0.55) + '" width="8" height="1.1"/>';
+          } else {
+            out += '<rect x="' + (cx - 4) + '" y="' + (ys[i] - 0.55) + '" width="3.2" height="1.1"/>';
+            out += '<rect x="' + (cx + 0.8) + '" y="' + (ys[i] - 0.55) + '" width="3.2" height="1.1"/>';
+          }
+        }
+        return out;
+      }
+      var TAEGEUK =
+        '<svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="대한민국">' +
+        '<rect width="36" height="24" fill="#fff"/>' +
+        '<g transform="rotate(-33.69 18 12)">' +
+        '<circle cx="18" cy="12" r="6" fill="#003478"/>' +
+        '<path d="M18 6 A6 6 0 0 1 18 18 A3 3 0 0 1 18 12 A3 3 0 0 0 18 6 Z" fill="#c60c30"/>' +
+        '</g>' +
+        '<g fill="#111">' +
+        trigram(7.5, 5.5, [true, true, true]) +   /* 건 (hoist-top) */
+        trigram(7.5, 18.5, [true, false, true]) + /* 리 (hoist-bottom) */
+        trigram(28.5, 5.5, [false, true, false]) +/* 감 (fly-top) */
+        trigram(28.5, 18.5, [false, false, false]) + /* 곤 (fly-bottom) */
+        '</g></svg>';
+
+      function esc(s) {
+        return String(s == null ? "" : s)
+          .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function overall(p) {
+        if (p.rating) return p.rating;
+        var s = p.stats || [];
+        if (!s.length) return "";
+        var sum = 0;
+        for (var i = 0; i < s.length; i++) sum += Number(s[i].value) || 0;
+        return Math.round(sum / s.length);
+      }
+
+      function cardHTML(p, large) {
+        var ovr = overall(p);
+        var photo = (p.photo || "").trim();
+        var initial = (p.name || "?").trim().charAt(0);
+        var photoInner = photo
+          ? '<img src="' + esc(photo) + '" alt="' + esc(p.name) + '" ' +
+            'onerror="this.remove();this.closest(\'.pcard__photo\').innerHTML=\'<span class=&quot;pcard__ph&quot;>' + esc(initial) + '</span>\'">'
+          : '<span class="pcard__ph">' + esc(initial) + '</span>';
+
+        // Stats laid out row-major in a 2-column grid (left col = 0,2,4 ; right col = 1,3,5).
+        var stats = (p.stats || []);
+        var statsHTML = "";
+        for (var si = 0; si < stats.length; si++) {
+          var st = stats[si];
+          statsHTML += '<div class="pstat"><b>' + esc(st.value) + '</b>' +
+            '<span data-en="' + esc(st.labelEn || st.label) + '">' + esc(st.label) + '</span></div>';
+        }
+
+        var cls = "pcard" + (p.tier === "signature" ? " pcard--signature" : "") + (large ? " pcard--lg" : "");
+        var ribbon = p.tier === "signature" ? '<div class="pcard__ribbon">Signature</div>' : "";
+        var flag = (p.flag && p.flag !== "KR") ? esc(p.flag) : TAEGEUK;
+
+        return '<article class="' + cls + '">' + ribbon +
+          '<div class="pcard__inner">' +
+            '<div class="pcard__top">' +
+              '<div class="pcard__meta">' +
+                '<span class="pcard__ovr">' + esc(ovr) + '</span>' +
+                '<span class="pcard__pos">' + esc(p.position) + '</span>' +
+                '<span class="pcard__flag">' + flag + '</span>' +
+                '<img class="pcard__badge" src="/assets/logo-bally-white.png" alt="BALLY JUNIOR" />' +
+              '</div>' +
+              '<div class="pcard__photo"><span class="pcard__watermark"></span>' + photoInner + '</div>' +
+            '</div>' +
+            '<div class="pcard__name" data-en="' + esc(p.nameEn || p.name) + '">' + esc(p.name) + '</div>' +
+            '<div class="pcard__sport" data-en="' + esc(p.sportEn || p.sport) + '">' + esc(p.sport) + '</div>' +
+            '<div class="pcard__divider"></div>' +
+            '<div class="pcard__stats">' + statsHTML + '</div>' +
+          '</div>' +
+        '</article>';
+      }
+
+      function setText(id, ko, en) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        if (ko != null) el.innerHTML = ko;
+        if (en != null) el.setAttribute("data-en", en);
+        // Drop any data-ko captured from the static placeholder so the next
+        // BallyI18n.apply() re-captures the fresh Korean copy (see script.js).
+        el.removeAttribute("data-ko");
+      }
+
+      fetch("/assets/players.json", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (data) {
+          var pg = data.page || {};
+          setText("pTitle", pg.title, pg.titleEn);
+          setText("pDesc", pg.desc, pg.descEn);
+          if (pg.eyebrow) document.getElementById("pEyebrow").textContent = pg.eyebrow;
+
+          var players = data.players || [];
+          var featured = players.filter(function (p) { return p.featured; });
+          var rest = players.filter(function (p) { return !p.featured; });
+
+          if (featured.length) {
+            document.getElementById("featuredSection").hidden = false;
+            setText("featuredBand", data.featuredLabel || "이달의 플레이어", data.featuredLabelEn || "Players of the Month");
+            document.getElementById("featuredGrid").innerHTML =
+              featured.map(function (p) { return cardHTML(p, true); }).join("");
+          }
+
+          setText("allBand", data.allLabel || "전체 플레이어", data.allLabelEn || "All Players");
+          // All players (including featured) appear in the full grid
+          document.getElementById("playersGrid").innerHTML =
+            players.map(function (p) { return cardHTML(p, false); }).join("");
+
+          if (window.BallyI18n) window.BallyI18n.apply();
+        })
+        .catch(function () {
+          document.getElementById("pDesc").textContent = "선수 정보를 불러오지 못했습니다.";
+        });
+
+      /* ---- Shared header behaviors (scroll blur + mobile menu) ---- */
+      var header = document.getElementById("header");
+      function onScroll() {
+        if (window.scrollY > 20) header.classList.add("scrolled");
+        else header.classList.remove("scrolled");
+      }
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      var toggle = document.getElementById("menuToggle");
+      var nav = document.getElementById("nav");
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("open");
+        toggle.classList.toggle("open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+      nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("open");
+          toggle.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      var y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
