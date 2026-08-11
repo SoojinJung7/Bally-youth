@@ -65,9 +65,15 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - name: src
-                label: "영상 URL"
-                widget: string
-                hint: "YouTube/Vimeo URL 권장 (예: https://www.youtube.com/watch?v=XXXX). 또는 직접 업로드한 파일 경로 (예: assets/updates/clip-1.mp4)."
+                label: "영상 (파일 업로드 또는 URL)"
+                widget: file
+                choose_url: true
+                media_folder: "/assets/updates"
+                public_folder: "/assets/updates"
+                media_library:
+                  config:
+                    max_file_size: 52428800
+                hint: "mp4 파일을 직접 업로드하거나(50MB 이하 권장), URL 입력을 눌러 YouTube/Vimeo 링크를 붙여넣으세요 (예: https://www.youtube.com/watch?v=XXXX). 긴 영상은 YouTube에 올리고 링크를 넣는 것이 사이트가 훨씬 빨라집니다."
               - { name: title, label: "제목 (한글)", widget: string }
               - { name: titleEn, label: "제목 (영문)", widget: string }
               - { name: caption, label: "설명 (한글)", widget: text }

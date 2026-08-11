@@ -84,11 +84,13 @@ GitHub 웹에서 직접 수정해도 됩니다: repo → `admin/config.yml` → 
 설정 전에 동작을 보고 싶다면, repo를 클론한 폴더에서:
 
 ```bash
-npx @sveltia/cms-proxy-server   # 로컬 백엔드 실행
-# 다른 터미널에서
 python3 -m http.server 8000
-# 브라우저: http://localhost:8000/admin/  (GitHub 로그인 없이 편집 테스트)
+# 브라우저(Chrome/Edge): http://localhost:8000/admin/
 ```
+
+접속 후 **"Work with Local Repository"** 를 누르고 클론한 repo 폴더를 선택하면
+GitHub 로그인 없이 편집을 테스트할 수 있습니다. (별도 프록시 서버 불필요 —
+Sveltia는 브라우저의 폴더 접근 기능을 사용하므로 Chrome/Edge에서만 동작합니다.)
 
 `config.yml` 에 `local_backend: true` 가 켜져 있어 로컬 테스트가 가능합니다.
 
