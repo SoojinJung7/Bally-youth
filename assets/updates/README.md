@@ -9,12 +9,12 @@
 ```json
 {
   "items": [
-    { "src": "assets/updates/clip-2.mp4", "title": "제목", "caption": "설명" }
+    { "src": "/assets/updates/camp-basketball-2608.mp4", "title": "제목", "caption": "설명" }
   ]
 }
 ```
 
-- 영상 파일(`clip-2.mp4` 등)은 이 폴더에 둡니다.
+- 영상 파일은 이 폴더에 두고, 경로는 `/assets/updates/...` 형식으로 씁니다.
 - 모바일 자동재생을 위해 음소거(muted) 상태로 시작합니다. 사용자는 컨트롤에서 소리를 켤 수 있습니다.
 - 권장: mp4(H.264), 960×540 내외, 파일당 50MB 미만.
 
